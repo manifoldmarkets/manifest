@@ -33,7 +33,7 @@ const EARLIEST_TIME = '08:30'
 const LATEST_TIME = '22:00'
 const SLOT_MINUTES = 30
 const ROW_H = 40
-const COL_W = 300
+const COL_W = 260
 const HEADER_H = 56
 const COLOURS = [
   ['#C3F0D8', '#A8E5C4'], // Green shades
@@ -72,7 +72,7 @@ export default function Schedule() {
   const filteredEvents = events.filter((ev) => ev.start.startsWith(selectedDay))
 
   return (
-    <main className="dark:bg-ink-1000 relative min-h-screen bg-canvas-0 font-serif text-ink-900 transition-colors duration-300 dark:text-ink-100">
+    <main className="dark:bg-ink-1000 relative min-h-screen bg-canvas-0 pl-6 font-serif text-ink-900 transition-colors duration-300 dark:text-ink-100">
       <Navbar />
 
       <section className="px-6 py-10">
