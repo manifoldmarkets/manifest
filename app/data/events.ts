@@ -97,7 +97,7 @@ export const events: Event[] = [
     end: '2025-06-06T19:30',
     title: 'Friend algo matching survey schelling point',
     description:
-      'Planning to attend the algorithmic friend networking in Rat Park on Saturday 10am? Have you filled out your survey yet? If not, come hangout with others and fill it out! It will take ~20mins.',
+      'Planning to attend the algorithmic friend meeting in Rat Park on Saturday 10am? Have you filled out your survey yet? If not, come hangout with others and fill it out! It will take ~20mins.',
     location: 'Exobrain',
   },
   {
@@ -152,7 +152,7 @@ export const events: Event[] = [
     start: '2025-06-07T10:00',
     end: '2025-06-07T11:00',
     title:
-      'Speed networking: we will algorithmically find your 5 best friends at Manifest',
+      'Speed meeting: we will algorithmically find your 5 best friends at Manifest',
     speaker: 'David Shor',
     description:
       'David Shor runs LoveScience events which help people find potential romantic matches. This is NOT that, but rather, the platonic version! Want to meet new people to become friends with or find like minded people? Must have filled out the survey by Friday 20:00.',
@@ -173,8 +173,8 @@ export const events: Event[] = [
     location: 'Rat Park',
   },
   {
-    start: '2025-06-07T13:30',
-    end: '2025-06-07T14:30',
+    start: '2025-06-08T17:00',
+    end: '2025-06-08T18:00',
     title: 'Scott Alexander',
     description: '',
     speaker: 'Scott Alexander',
@@ -254,8 +254,8 @@ export const events: Event[] = [
     location: 'C1',
   },
   {
-    start: '2025-06-08T14:00',
-    end: '2025-06-08T15:00',
+    start: '2025-06-08T16:00',
+    end: '2025-06-08T17:00',
     title: 'Reversible Cryopreservation',
     description:
       'A pragmatic analysis of reversible cryopresevation and its technical feasibility. ',
@@ -452,11 +452,11 @@ Resurrecting the "Somers System", the lost art of consensus-based land valuation
     location: 'Rat Park',
   },
   {
-    start: '2025-06-08T17:00',
-    end: '2025-06-08T18:00',
-    title: 'Nate Silver (TBC)',
+    start: '2025-06-07T13:30',
+    end: '2025-06-07T14:30',
+    title: 'Nate Silver & Chris Best',
     description: '',
-    speaker: 'Nate Silver',
+    speaker: 'Nate Silver & Chris Best',
     location: 'Rat Park',
   },
   {
@@ -527,12 +527,12 @@ Resurrecting the "Somers System", the lost art of consensus-based land valuation
     location: 'E1',
   },
   {
-    start: '2025-06-08T16:00',
-    end: '2025-06-08T17:00',
+    start: '2025-06-08T12:00',
+    end: '2025-06-08T13:00',
     title: 'Panel: Has trading and gambling gone too far in the US?',
     speaker: 'Jeremiah Johnson, Isaac Rose-Berman, Christopher Gerlacher',
     description: '',
-    location: 'C1',
+    location: 'E1',
   },
   {
     start: '2025-06-08T16:00',
