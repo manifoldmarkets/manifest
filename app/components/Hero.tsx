@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export default function Hero() {
   return (
-    <section className="container relative z-10 mx-auto px-4 py-12 md:py-20 md:overflow-visible overflow-hidden">
+    <section className="container relative z-10 mx-auto overflow-hidden px-4 py-12 md:overflow-visible md:py-20">
       <div className="relative">
         {/* Decorative elements */}
         <div className="absolute -right-12 top-12 h-32 w-32 rounded-full bg-gradient-to-br from-purple-500 to-pink-400 opacity-15 blur-xl"></div>
@@ -54,7 +54,7 @@ export default function Hero() {
               href="https://www.google.com/maps/place/2740+Telegraph+Ave,+Berkeley,+CA+94705"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center rounded-full bg-gradient-to-r from-blue-400/10 to-indigo-600/10 px-4 py-2 hover:from-blue-400/20 hover:to-indigo-600/20 transition-colors"
+              className="mt-8 inline-flex items-center rounded-full bg-gradient-to-r from-blue-400/10 to-indigo-600/10 px-4 py-2 transition-colors hover:from-blue-400/20 hover:to-indigo-600/20"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +85,7 @@ export default function Hero() {
 
         {/* Action Buttons */}
         <div className="mt-10 flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-          <div className="flex flex-col items-center gap-2 relative transition-all duration-300 hover:-translate-y-1">
+          <div className="relative flex flex-col items-center gap-2 transition-all duration-300 hover:-translate-y-1">
             <Link
               href="https://www.havenbookings.space/festival-season"
               target="_blank"
@@ -94,9 +94,6 @@ export default function Hero() {
             >
               Buy Tickets
             </Link>
-            <div className="early-bird-banner absolute top-full mt-1 -left-10 transform rotate-3 bg-red-700 text-white px-3 py-1.5 text-sm font-outfit font-medium shadow-md z-20 whitespace-nowrap rounded-md">
-              Prices Increase After May 24
-            </div>
           </div>
           <Link
             href="https://manifold.markets/topic/manifest"
