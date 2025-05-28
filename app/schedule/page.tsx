@@ -85,17 +85,6 @@ export default function Schedule() {
             Community favorites such as poker and other games will also be
             making a return!
           </p>
-          <select
-            value={selectedDay}
-            onChange={(e) => setSelectedDay(e.target.value)}
-            className="border-ink-200 dark:border-ink-700 dark:bg-ink-800 w-48 rounded-lg border bg-white px-4 py-2 text-sm"
-          >
-            {DAYS.map((day) => (
-              <option key={day.date} value={day.date}>
-                {day.label}
-              </option>
-            ))}
-          </select>
         </div>
 
         <div className="mb-6 flex justify-center md:hidden">
@@ -112,147 +101,175 @@ export default function Schedule() {
           </select>
         </div>
 
-        {isMobileView ? (
-          <div className="space-y-4">
-            {filteredEvents
-              .filter((ev) => ev.location === selectedRoom)
-              .sort((a, b) => isoToMin(a.start) - isoToMin(b.start))
-              .map((ev, idx) => (
-                <div
-                  key={idx}
-                  className="dark:border-ink-700 dark:bg-ink-800 w-full rounded-lg border bg-white p-4 text-left shadow"
-                >
-                  <div className="text-ink-500 dark:text-ink-400 mb-2 text-sm">
-                    {new Date(ev.start).toLocaleTimeString([], {
-                      hour: '2-digit',
-                      minute: '2-digit',
-                    })}{' '}
-                    –{' '}
-                    {new Date(ev.end).toLocaleTimeString([], {
-                      hour: '2-digit',
-                      minute: '2-digit',
-                    })}
-                  </div>
-                  <p className="text-lg font-semibold">{ev.title}</p>
-                  {ev.speaker && (
-                    <p className="text-ink-600 dark:text-ink-400 mt-1 text-sm font-semibold">
-                      {ev.speaker}
+        {isMobileView
+          ? DAYS.map((day) => (
+              <div key={day.date} className="mb-12">
+                <h2 className="mb-6 text-center text-2xl font-bold">
+                  {day.label}
+                </h2>
+                <div className="space-y-4">
+                  {events
+                    .filter(
+                      (ev) =>
+                        ev.start.startsWith(day.date) &&
+                        ev.location === selectedRoom
+                    )
+                    .sort((a, b) => isoToMin(a.start) - isoToMin(b.start))
+                    .map((ev, idx) => (
+                      <div
+                        key={idx}
+                        className="dark:border-ink-700 dark:bg-ink-800 w-full rounded-lg border bg-white p-4 text-left shadow"
+                      >
+                        <div className="text-ink-500 dark:text-ink-400 mb-2 text-sm">
+                          {new Date(ev.start).toLocaleTimeString([], {
+                            hour: '2-digit',
+                            minute: '2-digit',
+                          })}{' '}
+                          –{' '}
+                          {new Date(ev.end).toLocaleTimeString([], {
+                            hour: '2-digit',
+                            minute: '2-digit',
+                          })}
+                        </div>
+                        <p className="text-lg font-semibold">{ev.title}</p>
+                        {ev.speaker && (
+                          <p className="text-ink-600 dark:text-ink-400 mt-1 text-sm font-semibold">
+                            {ev.speaker}
+                          </p>
+                        )}
+                        {ev.descriptionHtml ? (
+                          <div
+                            className="text-ink-600 dark:text-ink-400 mt-2 space-y-2 text-sm [&_a]:text-primary-600 [&_a]:hover:text-primary-700 [&_a]:hover:underline"
+                            dangerouslySetInnerHTML={{
+                              __html: ev.descriptionHtml,
+                            }}
+                          />
+                        ) : ev.description ? (
+                          <p className="text-ink-600 dark:text-ink-400 mt-2 text-sm">
+                            {ev.description}
+                          </p>
+                        ) : null}
+                      </div>
+                    ))}
+                  {events.filter(
+                    (ev) =>
+                      ev.start.startsWith(day.date) &&
+                      ev.location === selectedRoom
+                  ).length === 0 && (
+                    <p className="text-ink-500 dark:text-ink-400 text-center">
+                      No events scheduled for this room.
                     </p>
                   )}
-                  {ev.descriptionHtml ? (
-                    <div
-                      className="text-ink-600 dark:text-ink-400 mt-2 space-y-2 text-sm [&_a]:text-primary-600 [&_a]:hover:text-primary-700 [&_a]:hover:underline"
-                      dangerouslySetInnerHTML={{ __html: ev.descriptionHtml }}
-                    />
-                  ) : ev.description ? (
-                    <p className="text-ink-600 dark:text-ink-400 mt-2 text-sm">
-                      {ev.description}
-                    </p>
-                  ) : null}
                 </div>
-              ))}
-            {filteredEvents.filter((ev) => ev.location === selectedRoom)
-              .length === 0 && (
-              <p className="text-ink-500 dark:text-ink-400 text-center">
-                No events scheduled for this room.
-              </p>
-            )}
-          </div>
-        ) : (
-          <div className="flex justify-center">
-            <div
-              className="relative border-l border-t pl-16"
-              style={{
-                width: ROOMS.length * COL_W,
-                height: totalSlots * ROW_H + HEADER_H,
-              }}
-            >
-              <div className="hidden md:block">
-                {ROOMS.map((room, i) => (
-                  <div
-                    key={room.name}
-                    className="absolute top-0"
-                    style={{ left: i * COL_W, width: COL_W }}
-                  >
-                    <div className="bg-ink-50 dark:bg-ink-800 flex h-14 flex-col items-center justify-center gap-0.5 border-b border-r px-2 text-center">
-                      <span className="line-clamp-1 text-sm font-semibold leading-tight">
-                        {room.name}
-                      </span>
-                      <span className="text-[11px] opacity-70">
-                        max {room.capacity}
-                      </span>
-                    </div>
-                    <div className="bg-ink-200 dark:bg-ink-700 absolute bottom-0 right-0 top-14 w-px" />
-                  </div>
-                ))}
               </div>
-
-              {Array.from({ length: totalSlots + 1 }).map((_, i) => {
-                const minutes = earliest + i * SLOT_MINUTES
-                const h = `${Math.floor(minutes / 60)}`.padStart(2, '0')
-                const m = `${minutes % 60}`.padStart(2, '0')
-                return (
-                  <React.Fragment key={i}>
-                    <div
-                      className="dark:border-ink-800 absolute left-0 right-0 border-b border-dashed border-ink-100"
-                      style={{ top: HEADER_H + i * ROW_H }}
-                    />
-                    <div
-                      className="text-ink-500 dark:text-ink-400 absolute -left-16 w-14 text-right text-xs"
-                      style={{ top: HEADER_H + i * ROW_H - 7 }}
-                    >
-                      {h}:{m}
-                    </div>
-                  </React.Fragment>
-                )
-              })}
-
-              {filteredEvents.map((ev, idx) => {
-                const col = ROOMS.findIndex((r) => r.name === ev.location)
-                if (col === -1) return null // skip unknown location
-
-                const startMin = isoToMin(ev.start) - earliest
-                const endMin = isoToMin(ev.end) - earliest
-                const top = yFromMin(startMin)
-                const height = ((endMin - startMin) / SLOT_MINUTES) * ROW_H
-
-                const eventsInThisColumnBeforeThisTime = filteredEvents.filter(
-                  (e) =>
-                    e.location === ev.location &&
-                    isoToMin(e.start) < isoToMin(ev.start)
-                ).length
-                const bg =
-                  COLOURS[col % COLOURS.length][
-                    eventsInThisColumnBeforeThisTime % 2
-                  ]
-
-                return (
-                  <button
-                    key={idx}
-                    onClick={() => setSelected(ev)}
-                    className="absolute mx-1 cursor-pointer overflow-hidden rounded-lg p-2 text-left shadow transition-all duration-200 hover:z-10 hover:scale-[1.02] hover:shadow-lg hover:brightness-95"
+            ))
+          : DAYS.map((day) => (
+              <div key={day.date} className="mb-16">
+                <h2 className="mb-6 text-center text-4xl font-bold">
+                  {day.label}
+                </h2>
+                <div className="flex justify-center">
+                  <div
+                    className="relative border-l border-t pl-16"
                     style={{
-                      left: col * COL_W,
-                      top,
-                      height,
-                      width: COL_W - 2,
-                      backgroundColor: bg,
+                      width: ROOMS.length * COL_W,
+                      height: totalSlots * ROW_H + HEADER_H,
                     }}
                   >
-                    <div className="line-clamp-2 text-sm font-semibold leading-snug">
-                      {ev.title}
+                    <div className="hidden md:block">
+                      {ROOMS.map((room, i) => (
+                        <div
+                          key={room.name}
+                          className="absolute top-0"
+                          style={{ left: i * COL_W, width: COL_W }}
+                        >
+                          <div className="bg-ink-50 dark:bg-ink-800 flex h-14 flex-col items-center justify-center gap-0.5 border-b border-r px-2 text-center">
+                            <span className="line-clamp-1 text-sm font-semibold leading-tight">
+                              {room.name}
+                            </span>
+                            <span className="text-[11px] opacity-70">
+                              max {room.capacity}
+                            </span>
+                          </div>
+                          <div className="bg-ink-200 dark:bg-ink-700 absolute bottom-0 right-0 top-14 w-px" />
+                        </div>
+                      ))}
                     </div>
-                    {ev.speaker && (
-                      <div className="mt-0.5 line-clamp-1 text-xs opacity-80">
-                        {ev.speaker}
-                      </div>
-                    )}
-                  </button>
-                )
-              })}
-            </div>
-          </div>
-        )}
+
+                    {Array.from({ length: totalSlots + 1 }).map((_, i) => {
+                      const minutes = earliest + i * SLOT_MINUTES
+                      const h = `${Math.floor(minutes / 60)}`.padStart(2, '0')
+                      const m = `${minutes % 60}`.padStart(2, '0')
+                      return (
+                        <React.Fragment key={i}>
+                          <div
+                            className="dark:border-ink-800 absolute left-0 right-0 border-b border-dashed border-ink-100"
+                            style={{ top: HEADER_H + i * ROW_H }}
+                          />
+                          <div
+                            className="text-ink-500 dark:text-ink-400 absolute -left-16 w-14 text-right text-xs"
+                            style={{ top: HEADER_H + i * ROW_H - 7 }}
+                          >
+                            {h}:{m}
+                          </div>
+                        </React.Fragment>
+                      )
+                    })}
+
+                    {events
+                      .filter((ev) => ev.start.startsWith(day.date))
+                      .map((ev, idx) => {
+                        const col = ROOMS.findIndex(
+                          (r) => r.name === ev.location
+                        )
+                        if (col === -1) return null // skip unknown location
+
+                        const startMin = isoToMin(ev.start) - earliest
+                        const endMin = isoToMin(ev.end) - earliest
+                        const top = yFromMin(startMin)
+                        const height =
+                          ((endMin - startMin) / SLOT_MINUTES) * ROW_H
+
+                        const eventsInThisColumnBeforeThisTime = events
+                          .filter((e) => e.start.startsWith(day.date))
+                          .filter(
+                            (e) =>
+                              e.location === ev.location &&
+                              isoToMin(e.start) < isoToMin(ev.start)
+                          ).length
+                        const bg =
+                          COLOURS[col % COLOURS.length][
+                            eventsInThisColumnBeforeThisTime % 2
+                          ]
+
+                        return (
+                          <button
+                            key={idx}
+                            onClick={() => setSelected(ev)}
+                            className="absolute mx-1 cursor-pointer overflow-hidden rounded-lg p-2 text-left shadow transition-all duration-200 hover:z-10 hover:scale-[1.02] hover:shadow-lg hover:brightness-95"
+                            style={{
+                              left: col * COL_W,
+                              top,
+                              height,
+                              width: COL_W - 2,
+                              backgroundColor: bg,
+                            }}
+                          >
+                            <div className="line-clamp-2 text-sm font-semibold leading-snug">
+                              {ev.title}
+                            </div>
+                            {ev.speaker && (
+                              <div className="mt-0.5 line-clamp-1 text-xs opacity-80">
+                                {ev.speaker}
+                              </div>
+                            )}
+                          </button>
+                        )
+                      })}
+                  </div>
+                </div>
+              </div>
+            ))}
       </section>
 
       {!isMobileView && selected && (
