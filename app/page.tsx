@@ -1,14 +1,17 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+export const dynamic = 'force-dynamic'
+
 export default function Page() {
+  const imageNum = Math.floor(Math.random() * 10) + 1
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#0a0a0a] text-white">
       {/* Full-bleed hero image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/gallery/10.jpg"
-          alt="Manifest — a crowd gathered outdoors for a talk under sun shades"
+          src={`/images/gallery/${imageNum}.jpg`}
+          alt="Manifest conference"
           fill
           className="object-cover object-center"
           priority
