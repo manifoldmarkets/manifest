@@ -18,12 +18,12 @@ const speakers: Speaker[] = [
     image: '/images/speakers/scott.jpg',
     answerId: 'SEO9d2NN0u',
   },
-  {
-    name: 'Michael Lewis',
-    bio: 'Bestselling author of The Big Short & Moneyball',
-    image: '/images/speakers/michael.jpg',
-    answerId: 'zgpq6PRzUy',
-  },
+  // {
+  //   name: 'Michael Lewis',
+  //   bio: 'Bestselling author of The Big Short & Moneyball',
+  //   image: '/images/speakers/michael.jpg',
+  //   answerId: 'zgpq6PRzUy',
+  // },
   {
     name: 'Chris Best',
     bio: 'Cofounder & CEO of Substack',
@@ -48,12 +48,12 @@ const speakers: Speaker[] = [
     image: '/images/speakers/emmett.jpg',
     answerId: 'd2PsI6cAIp',
   },
-  {
-    name: 'Luana Lopes Lara',
-    bio: 'Cofounder of Kalshi',
-    image: '/images/speakers/luana.jpg',
-    answerId: 'ZAZ2y6dN6N',
-  },
+  // {
+  //   name: 'Luana Lopes Lara',
+  //   bio: 'Cofounder of Kalshi',
+  //   image: '/images/speakers/luana.jpg',
+  //   answerId: 'ZAZ2y6dN6N',
+  // },
   {
     name: 'Aella',
     bio: 'Sex researcher & writer of Knowingless',
