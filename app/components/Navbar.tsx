@@ -20,14 +20,14 @@ export default function Navbar() {
   }, [isMenuOpen])
 
   const links = [
-    { href: '/', label: 'Home' },
-    { href: '/#speakers', label: 'Speakers' },
-    { href: '/#sponsors', label: 'Sponsors' },
-    { href: '/#testimonials', label: 'Rave Reviews' },
-    { href: '/#gallery', label: 'Gallery' },
-    { href: '/#nightmarket', label: 'Night Market' },
-    { href: '/#contact', label: 'Contact' },
-    { href: '/schedule', label: 'Schedule' },
+    { href: '/2025', label: 'Home' },
+    { href: '/2025#speakers', label: 'Speakers' },
+    { href: '/2025#sponsors', label: 'Sponsors' },
+    { href: '/2025#testimonials', label: 'Rave Reviews' },
+    { href: '/2025#gallery', label: 'Gallery' },
+    { href: '/2025#nightmarket', label: 'Night Market' },
+    { href: '/2025#contact', label: 'Contact' },
+    { href: '/2025/schedule', label: 'Schedule' },
     {
       href: 'https://www.havenbookings.space/festival-season',
       label: 'Buy Tickets',
