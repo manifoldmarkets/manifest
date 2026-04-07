@@ -1,4 +1,4 @@
-import { Bungee_Shade, DM_Sans, Outfit } from 'next/font/google'
+import { Bungee_Shade, Cinzel, Cinzel_Decorative, DM_Sans, Libre_Baskerville, Outfit } from 'next/font/google'
 import type { Metadata } from 'next'
 import './globals.css'
 
@@ -17,30 +17,45 @@ const bungeeShade = Bungee_Shade({
   subsets: ['latin'],
   weight: ['400'],
 })
+const cinzel = Cinzel({
+  variable: '--font-cinzel',
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+})
+const cinzelDecorative = Cinzel_Decorative({
+  variable: '--font-cinzel-decorative',
+  subsets: ['latin'],
+  weight: ['400', '700', '900'],
+})
+const libreBaskerville = Libre_Baskerville({
+  variable: '--font-libre-baskerville',
+  subsets: ['latin'],
+  weight: ['400', '700'],
+})
 
 export const metadata: Metadata = {
-  title: 'Manifest 2025',
-  description: 'A festival for forecasting, markets, AI, and novel ideas. June 6-8, 2025 in Berkeley, California.',
+  title: 'Manifest 2026',
+  description: 'A festival of forecasting & prediction markets. June 12-14, 2026 · Lighthaven, Berkeley, CA.',
   icons: {
     icon: '/manifold-logo.ico',
   },
   openGraph: {
-    title: 'Manifest 2025',
-    description: 'A festival for forecasting, markets, AI, and novel ideas. June 6-8, 2025 in Berkeley, California.',
+    title: 'Manifest 2026',
+    description: 'A festival of forecasting & prediction markets. June 12-14, 2026 · Lighthaven, Berkeley, CA.',
     images: [
       {
-        url: '/images/gallery/1.jpg',
+        url: '/images/2026/header.png',
         width: 1800,
-        height: 1200,
-        alt: 'Manifest 2025 - A festival for forecasting, markets, and novel ideas',
+        height: 900,
+        alt: 'Manifest 2026 - A festival of forecasting & prediction markets',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Manifest 2025',
-    description: 'A festival for forecasting, markets, AI, and novel ideas. June 6-8, 2025 in Berkeley, California.',
-    images: ['/images/gallery/1.jpg'],
+    title: 'Manifest 2026',
+    description: 'A festival of forecasting & prediction markets. June 12-14, 2026 · Lighthaven, Berkeley, CA.',
+    images: ['/images/2026/header.png'],
   },
 }
 
@@ -52,7 +67,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${outfit.variable} ${bungeeShade.variable} antialiased`}
+        className={`${outfit.variable} ${bungeeShade.variable} ${cinzel.variable} ${cinzelDecorative.variable} ${libreBaskerville.variable} antialiased`}
       >
         {children}
       </body>

@@ -1,4 +1,4 @@
-import Manifest2026 from './2026/Manifest2026'
+import Manifest2026 from './Manifest2026'
 
 export default function Page() {
   return <Manifest2026 />
