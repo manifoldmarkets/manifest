@@ -130,7 +130,7 @@ export default function Manifest2026() {
     <div className="bg-m26-parchment font-baskerville text-m26-purple-deep">
       {/* NAV */}
       <nav className="fixed top-0 z-50 flex w-full items-center justify-between bg-m26-parchment/30 px-6 py-3 backdrop-blur-sm">
-        <span className="font-cinzel text-sm font-bold tracking-widest text-m26-purple uppercase">
+        <span className="font-cinzel text-sm font-bold tracking-tighter text-m26-purple uppercase">
           Manifest 2026
         </span>
         <div className="flex items-center gap-6">
@@ -162,13 +162,13 @@ export default function Manifest2026() {
 
         {/* Content pinned to center of first viewport */}
         <div className="absolute inset-x-0 top-0 z-10 flex min-h-screen flex-col items-center justify-center px-6 text-center">
-          <h1 className="animate-m26-fade-up font-cinzel-decorative text-5xl font-bold tracking-wide sm:text-7xl lg:text-[120px] lg:leading-none">
-            ManiFest 2026
+          <h1 className="animate-m26-fade-up font-cinzel-decorative text-3xl font-bold tracking-tighter sm:text-5xl lg:text-8xl lg:leading-none">
+            Manifest 2026
           </h1>
-          <p className="animate-m26-fade-up-1 mt-4 font-cinzel text-sm font-bold tracking-wide text-m26-purple-deep sm:text-lg">
+          <p className="animate-m26-fade-up-1 mt-4 font-cinzel text-sm font-bold text-m26-purple-deep sm:text-2xl">
             A Festival of Forecasting &amp; Prediction Markets
           </p>
-          <p className="animate-m26-fade-up-1 mt-2 font-cinzel text-xs font-bold tracking-wide text-m26-purple-deep/70 sm:text-sm">
+          <p className="animate-m26-fade-up-1 mt-2 font-cinzel text-xs font-bold text-m26-purple-deep/70 sm:text-lg">
             June 12&ndash;14, 2026 | Lighthaven, Berkeley, CA
           </p>
 
@@ -181,7 +181,7 @@ export default function Manifest2026() {
             ].map(({ value, label }) => (
               <div key={label} className="flex flex-col items-center">
                 <span className="text-4xl font-bold sm:text-5xl">{value}</span>
-                <span className="mt-1 text-xs tracking-wider text-m26-purple-deep/60">{label}</span>
+                <span className="mt-1 text-xs tracking-wider font-bold text-m26-purple-deep/90">{label}</span>
               </div>
             ))}
           </div>
