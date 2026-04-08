@@ -96,8 +96,8 @@ const FAQS = [
 ]
 
 const ORGANIZERS = [
-  { name: 'Winter', image: '/images/staff/rachel.jpg', email: 'winter@manifest.is' },
-  { name: 'NJ', image: '/images/staff/david.jpg', email: 'nj@manifest.is' },
+  { name: 'Winter', image: '/images/staff/winter.png', email: 'winter@manifest.is' },
+  { name: 'NJ', image: '/images/staff/nj.jpg', email: 'nj@manifest.is' },
   { name: 'Austin', image: '/images/staff/austin.jpg', email: 'austin@manifest.is' },
 ]
 
@@ -239,8 +239,8 @@ export default function Manifest2026() {
           <p className="animate-m26-fade-up-1 mt-4 font-cinzel text-sm font-bold text-m26-purple-deep sm:text-2xl">
             A festival for predictions, <br />and markets thereof
           </p>
-          <p className="animate-m26-fade-up-1 mt-24 font-cinzel text-xs font-bold text-m26-purple-deep/70 sm:text-lg">
-            June 12&ndash;14, 2026 | Lighthaven, Berkeley, CA
+          <p className="animate-m26-fade-up-1 sm:mt-36 mt-12 font-cinzel text-xs font-bold text-m26-purple-deep/70 sm:text-lg">
+            June 12&ndash;14, 2026 | Berkeley, CA
           </p>
 
           {/* Countdown */}
@@ -257,9 +257,9 @@ export default function Manifest2026() {
             ))}
           </div> */}
 
-          <div className="animate-m26-fade-up-3 mt-10 flex flex-wrap justify-center gap-4">
+          <div className="animate-m26-fade-up-3 mt-6 flex flex-wrap justify-center gap-4">
+            <BtnOutline href="mailto:team@manifest.is" className="px-8 py-3.5 text-lg">Contact Us</BtnOutline>
             <BtnSolid href="#tickets" className="px-8 py-3.5 text-lg">Register</BtnSolid>
-            <BtnOutline href="https://discord.com/invite/MjDqMcQFdR" className="px-8 py-3.5 text-lg">Join Discord</BtnOutline>
           </div>
         </div>
       </section>
@@ -283,7 +283,7 @@ export default function Manifest2026() {
           </div>
           <div className="mt-10 text-center">
             <p className="mb-4 font-cinzel text-sm font-bold tracking-wider text-m26-purple uppercase">And past appearances from</p>
-            <p className="mx-auto max-w-3xl font-baskerville sm:text-sm text-xs leading-relaxed text-m26-muted">
+            <p className="mx-auto max-w-3xl font-baskerville sm:text-sm text-xs sm:leading-7 text-m26-muted">
               {SPECIAL_GUESTS.sort().map((name, i) => (
                 <span key={name}><span className="whitespace-nowrap mx-1">{name}</span>{' · '}</span>
               ))}
@@ -407,7 +407,7 @@ export default function Manifest2026() {
             </p>
           </div>
           <div className="mt-10">
-            <BtnSolid href="mailto:austin@manifest.is">Become a Sponsor</BtnSolid>
+            <BtnSolid href="mailto:team@manifest.is">Become a Sponsor</BtnSolid>
           </div>
         </div>
       </section>
