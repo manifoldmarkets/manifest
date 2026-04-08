@@ -16,6 +16,39 @@ const SPEAKERS = [
   { name: 'Laura Deming', bio: 'Scientist', image: '/images/speakers/laura.jpg' },
 ]
 
+const TESTIMONIALS = [
+  {
+    quote: 'I met many well known figures that I\'ve been reading for years. Where else will you meet multiple people within 24 hours who casually mentioned the short story Funes the Memorious in conversation?',
+    author: 'Scott Sumner',
+    url: 'https://scottsumner.substack.com/p/paradise-on-telegraph-avenue',
+  },
+  {
+    quote: 'I love Manifest. I paid the full price for the full ticket, sucker I am, and my subsidy provided for these swaying bauble lights, these warm soporific nooks, these flames and corridors, these souls brought to Earth together, eyes lighting up at their electric worlds made real.',
+    author: 'Tomie',
+    url: 'https://x.com/tomieinlove/status/1931934629218734083',
+  },
+  {
+    quote: 'Gwern came to my talk and told me at the end "I disagree with everything you said and your entire theory of aesthetics is wrong." lol',
+    author: 'Pablo',
+    url: 'https://x.com/PabloPeniche/status/1932095093827334543',
+  },
+  {
+    quote: 'I ran into tons of people gambling on every little outcome\u2014sometimes with cash, sometimes with digital cash, in one case with crypto, and more often on Manifold. There was gambling on competitions, gambling on coin flips, gambling about how many people would attend a given talk, and even gambling done to ensure something happened.',
+    author: 'Cremieux',
+    url: 'https://www.cremieux.xyz/p/meetups-are-fun',
+  },
+  {
+    quote: 'The Manifest conference has been a successful experiment: put enough introverts with common interests into a confined space and they\u2019ll spontaneously turn into extroverts.',
+    author: 'Byrne Hobart',
+    url: 'https://x.com/ByrneHobart/status/1799963459658154203',
+  },
+  {
+    quote: 'For much of my life, I have poured my attention into tough-to-explain solitary pursuits, finding myself often sitting in quiet corners on the fringes of gatherings wondering if they\u2019re worth the effort. Not so last weekend.',
+    author: 'TracingWoodgrains',
+    url: 'https://x.com/tracewoodgrains/status/1800790146633138395',
+  },
+]
+
 const SPONSORS = [
   { name: 'Polymarket', image: '/images/sponsors/polymarket-logo.svg', url: 'https://polymarket.com', size: 'h-16 sm:h-20' },
   { name: 'Substack', image: '/images/sponsors/substack-logo.png', url: 'https://substack.com', size: 'h-10 sm:h-12' },
@@ -39,8 +72,8 @@ const PRICING = [
 
 const FAQS = [
   { q: 'What is Manifest?', a: 'Manifest is a festival of forecasting and prediction markets, bringing together people who forecast the future, care about the future going well, and who build an interesting future.' },
-  { q: 'Where is it located?', a: 'Lighthaven, 2740 Telegraph Avenue, Berkeley, CA.' },
-  { q: 'What is the address?', a: '2740 Telegraph Avenue, Berkeley, CA 94705.' },
+  { q: 'Where is it located?', a: 'Lighthaven, 2740 Telegraph Avenue, Berkeley, CA 94705.' },
+  // { q: 'What is the address?', a: '2740 Telegraph Avenue, Berkeley, CA 94705.' },
   { q: 'Will accommodation be available for purchase?', a: 'Yes! We are selling rooms at Lighthaven. Space is limited, so most attendees will need to find other accommodations nearby.' },
   { q: 'What sorts of things will happen at Manifest?', a: 'Talks, panels, debates, workshops, prediction market tournaments, a night market, career fair, and much more. Full schedule coming soon!' },
   { q: 'How many people will be at Manifest?', a: 'We expect around 500-700 attendees across the weekend.' },
@@ -156,7 +189,7 @@ export default function Manifest2026() {
   return (
     <div className="bg-m26-parchment font-baskerville text-m26-purple-deep">
       {/* NAV */}
-      <nav className="fixed top-0 flex w-full items-center justify-between bg-m26-parchment/30 px-6 py-3 backdrop-blur-sm">
+      <nav className="fixed top-0 flex w-full items-center justify-between bg-m26-parchment/30 px-6 py-3 backdrop-blur-sm z-50">
         <span className="font-cinzel text-sm font-bold tracking-tighter text-m26-purple uppercase">
           Manifest 2026
         </span>
@@ -242,6 +275,36 @@ export default function Manifest2026() {
 
       <Divider />
 
+      {/* TESTIMONIALS */}
+      <section id="testimonials" className="scroll-mt-16 py-16 sm:py-24">
+        <div className="mx-auto max-w-5xl px-6">
+          <h2 className="mb-14 text-center font-cinzel-decorative text-3xl font-normal tracking-wide sm:text-5xl">
+            Tales from festivalgoers
+          </h2>
+          <div className="columns-1 gap-6 sm:columns-2">
+            {TESTIMONIALS.map((t) => (
+              <a
+                key={t.author}
+                href={t.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group mb-6 block break-inside-avoid rounded-tl-2xl rounded-br-2xl border border-m26-purple/20 bg-m26-cream/80 p-6 transition-all hover:border-m26-purple/40 hover:shadow-lg sm:p-8"
+              >
+                {/* <span className="mb-3 block font-cinzel-decorative text-3xl leading-none text-m26-lav-mid select-none">&ldquo;</span> */}
+                <p className="font-baskerville text-sm italic leading-relaxed text-m26-purple-deep sm:text-base">
+                  {t.quote}
+                </p>
+                <p className="text-right mt-4 font-cinzel text-xs font-bold tracking-wider text-m26-purple uppercase transition-colors group-hover:text-m26-purple-deep">
+                  &mdash; {t.author}
+                </p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Divider />
+
       {/* SPONSORS */}
       <section id="sponsors" className="scroll-mt-16 py-16 sm:py-24">
         <div className="mx-auto max-w-4xl px-6 text-center">
@@ -273,7 +336,7 @@ export default function Manifest2026() {
                 The Night Market
               </h2>
               <p className="mb-4 font-cinzel text-xs tracking-wide text-m26-muted">
-                June 12 | Lighthaven, Berkeley, CA
+                June 12 | Berkeley, CA
               </p>
               <p className="mb-6 text-sm leading-relaxed text-m26-muted">
                 The Night Market is back for the fourth year! An open-air evening
