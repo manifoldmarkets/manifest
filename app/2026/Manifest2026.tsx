@@ -156,7 +156,7 @@ export default function Manifest2026() {
   return (
     <div className="bg-m26-parchment font-baskerville text-m26-purple-deep">
       {/* NAV */}
-      <nav className="fixed top-0 z-50 flex w-full items-center justify-between bg-m26-parchment/30 px-6 py-3 backdrop-blur-sm">
+      <nav className="fixed top-0 flex w-full items-center justify-between bg-m26-parchment/30 px-6 py-3 backdrop-blur-sm">
         <span className="font-cinzel text-sm font-bold tracking-tighter text-m26-purple uppercase">
           Manifest 2026
         </span>
@@ -182,25 +182,25 @@ export default function Manifest2026() {
             priority
           />
           {/* Uniform warm overlay on the visible first screen */}
-          <div className="absolute inset-0 bg-m26-parchment/40" />
+          <div className="absolute inset-0 bg-m26-parchment/60" />
           {/* Gradient at the bottom to fade image into parchment bg */}
           <div className="absolute inset-x-0 bottom-0 h-[30vh] bg-gradient-to-t from-m26-parchment to-transparent" />
         </div>
 
         {/* Content pinned to center of first viewport */}
-        <div className="absolute inset-x-0 top-0 z-10 flex min-h-screen flex-col items-center justify-center px-6 text-center">
+        <div className="absolute inset-x-0 top-0 flex min-h-screen flex-col items-center justify-center px-6 text-center">
           <h1 className="animate-m26-fade-up font-cinzel-decorative text-3xl font-bold tracking-tighter sm:text-5xl lg:text-8xl lg:leading-none">
             Manifest 2026
           </h1>
           <p className="animate-m26-fade-up-1 mt-4 font-cinzel text-sm font-bold text-m26-purple-deep sm:text-2xl">
-            A festival for predictions, and markets thereof
+            A festival for predictions, <br />and markets thereof
           </p>
           <p className="animate-m26-fade-up-1 mt-2 font-cinzel text-xs font-bold text-m26-purple-deep/70 sm:text-lg">
             June 12&ndash;14, 2026 | Lighthaven, Berkeley, CA
           </p>
 
           {/* Countdown */}
-          <div className="animate-m26-fade-up-2 mt-10 flex gap-8 font-cinzel sm:gap-12">
+          {/* <div className="animate-m26-fade-up-2 mt-10 flex gap-8 font-cinzel sm:gap-12">
             {[
               { value: days, label: 'Days' },
               { value: hours, label: 'Hours' },
@@ -211,7 +211,7 @@ export default function Manifest2026() {
                 <span className="mt-1 text-xs tracking-wider font-bold text-m26-purple-deep/90">{label}</span>
               </div>
             ))}
-          </div>
+          </div> */}
 
           <div className="animate-m26-fade-up-3 mt-10 flex flex-wrap justify-center gap-4">
             <BtnSolid href="#tickets" className="px-8 py-3.5 text-lg">Register</BtnSolid>
@@ -221,10 +221,10 @@ export default function Manifest2026() {
       </section>
 
       {/* SPEAKERS */}
-      <section id="speakers" className="scroll-mt-16 py-16 sm:py-24">
+      <section id="speakers" className="relative z-10 scroll-mt-16 mt-[-30vh] pb-16 sm:py-24">
         <div className="mx-auto max-w-5xl px-6">
           <h2 className="mb-12 text-center font-cinzel-decorative text-3xl font-normal tracking-wide sm:text-5xl">
-            Last Year&rsquo;s Speakers
+            Speakers, of years past
           </h2>
           <div className="grid grid-cols-2 gap-6 sm:grid-cols-4 sm:gap-8">
             {SPEAKERS.map((s) => (
@@ -246,7 +246,7 @@ export default function Manifest2026() {
       <section id="sponsors" className="scroll-mt-16 py-16 sm:py-24">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h2 className="mb-12 font-cinzel-decorative text-3xl font-normal tracking-wide sm:text-5xl">
-            Last Year&rsquo;s Sponsors
+            Sponsors of Manifest 2025
           </h2>
           <div className="flex flex-col items-center gap-8">
             {SPONSORS.map((s) => (
