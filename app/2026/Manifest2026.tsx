@@ -66,12 +66,6 @@ const TESTIMONIALS = [
   },
 ]
 
-const SPONSORS = [
-  { name: 'Polymarket', image: '/images/sponsors/polymarket-logo.svg', url: 'https://polymarket.com', size: 'h-16 sm:h-20' },
-  { name: 'Substack', image: '/images/sponsors/substack-logo.png', url: 'https://substack.com', size: 'h-10 sm:h-12' },
-  { name: 'Kalshi', image: '/images/sponsors/kalshi-logo.svg', url: 'https://kalshi.com', size: 'h-10 sm:h-12' },
-]
-
 const MARKETS = [
   { name: 'Job Market', desc: 'Trade your skills for other skills, or find your next gig' },
   { name: 'Stuff Market', desc: 'Arts, crafts, and locally crafted foods' },
@@ -289,7 +283,7 @@ export default function Manifest2026() {
           </div>
           <div className="mt-10 text-center">
             <p className="mb-4 font-cinzel text-sm font-bold tracking-wider text-m26-purple uppercase">And past appearances from</p>
-            <p className="mx-auto max-w-3xl font-baskerville text-sm leading-relaxed text-m26-muted">
+            <p className="mx-auto max-w-3xl font-baskerville sm:text-sm text-xs leading-relaxed text-m26-muted">
               {SPECIAL_GUESTS.sort().map((name, i) => (
                 <span key={name}><span className="whitespace-nowrap mx-1">{name}</span>{' · '}</span>
               ))}
@@ -333,18 +327,84 @@ export default function Manifest2026() {
 
       <Divider />
 
+      {/* GALLERY */}
+      <section id="gallery" className="scroll-mt-16 py-16 sm:py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="mb-14 text-center font-cinzel-decorative text-3xl font-normal tracking-wide sm:text-5xl">
+            Scenes from Manifest
+          </h2>
+          {/* Mosaic layout: varied spans for visual rhythm */}
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+            {/* Row 1: wide + square + square */}
+            <div className="relative col-span-2 aspect-[2/1] overflow-hidden rounded-tl-2xl rounded-br-2xl">
+              <Image src="/images/gallery/1.jpg" alt="Manifest scene" fill className="object-cover" sizes="(min-width:640px) 50vw, 100vw" />
+            </div>
+            <div className="relative aspect-square overflow-hidden rounded-tl-2xl rounded-br-2xl">
+              <Image src="/images/gallery/2.jpg" alt="Manifest scene" fill className="object-cover" sizes="25vw" />
+            </div>
+            <div className="relative aspect-square overflow-hidden rounded-tl-2xl rounded-br-2xl">
+              <Image src="/images/gallery/3.jpg" alt="Manifest scene" fill className="object-cover" sizes="25vw" />
+            </div>
+
+            {/* Row 2: square + tall (spans 2 rows) + square */}
+            <div className="relative aspect-square overflow-hidden rounded-tl-2xl rounded-br-2xl">
+              <Image src="/images/gallery/4.jpg" alt="Manifest scene" fill className="object-cover" sizes="25vw" />
+            </div>
+            <div className="relative row-span-2 overflow-hidden rounded-tl-2xl rounded-br-2xl">
+              <Image src="/images/gallery/5.jpg" alt="Manifest scene" fill className="object-cover" sizes="25vw" />
+            </div>
+            <div className="relative aspect-square overflow-hidden rounded-tl-2xl rounded-br-2xl">
+              <Image src="/images/gallery/6.jpg" alt="Manifest scene" fill className="object-cover" sizes="25vw" />
+            </div>
+            <div className="relative aspect-square overflow-hidden rounded-tl-2xl rounded-br-2xl">
+              <Image src="/images/gallery/7.jpg" alt="Manifest scene" fill className="object-cover" sizes="25vw" />
+            </div>
+
+            {/* Row 3: square + (tall still) + wide */}
+            <div className="relative aspect-square overflow-hidden rounded-tl-2xl rounded-br-2xl">
+              <Image src="/images/gallery/8.jpg" alt="Manifest scene" fill className="object-cover" sizes="25vw" />
+            </div>
+            <div className="relative col-span-2 aspect-[2/1] overflow-hidden rounded-tl-2xl rounded-br-2xl">
+              <Image src="/images/gallery/9.jpg" alt="Manifest scene" fill className="object-cover" sizes="(min-width:640px) 50vw, 100vw" />
+            </div>
+
+            {/* Row 4: square + square + wide */}
+            <div className="relative aspect-square overflow-hidden rounded-tl-2xl rounded-br-2xl">
+              <Image src="/images/gallery/10.jpg" alt="Manifest scene" fill className="object-cover" sizes="25vw" />
+            </div>
+            <div className="relative aspect-square overflow-hidden rounded-tl-2xl rounded-br-2xl">
+              <Image src="/images/gallery/11.jpg" alt="Manifest scene" fill className="object-cover" sizes="25vw" />
+            </div>
+            <div className="relative col-span-2 aspect-[2/1] overflow-hidden rounded-tl-2xl rounded-br-2xl">
+              <Image src="/images/gallery/12.jpg" alt="Manifest scene" fill className="object-cover" sizes="(min-width:640px) 50vw, 100vw" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Divider />
+
       {/* SPONSORS */}
       <section id="sponsors" className="scroll-mt-16 py-16 sm:py-24">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h2 className="mb-12 font-cinzel-decorative text-3xl font-normal tracking-wide sm:text-5xl">
-            Sponsors of Manifest 2025
+            Sponsors of 2025
           </h2>
           <div className="flex flex-col items-center gap-8">
-            {SPONSORS.map((s) => (
-              <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer">
-                <MonoImage src={s.image} alt={s.name} width={280} height={60} className={s.size} />
+            <a href="https://polymarket.com" target="_blank" rel="noopener noreferrer">
+              <MonoImage src="/images/sponsors/polymarket-logo.svg" alt="Polymarket" width={280} height={60} className="h-16 sm:h-20" />
+            </a>
+            <div className="flex items-center gap-10 sm:gap-14">
+              <a href="https://substack.com" target="_blank" rel="noopener noreferrer">
+                <MonoImage src="/images/sponsors/substack-logo.png" alt="Substack" width={200} height={48} className="h-10 sm:h-12" />
               </a>
-            ))}
+              <a href="https://kalshi.com" target="_blank" rel="noopener noreferrer">
+                <MonoImage src="/images/sponsors/kalshi-logo.svg" alt="Kalshi" width={120} height={30} className="h-10 sm:h-12" />
+              </a>
+            </div>
+            <p className="mt-2 font-cinzel text-base font-bold tracking-wide text-m26-purple sm:text-lg">
+              Sovereign · Bayes · Elicit · Futuur · Metagame
+            </p>
           </div>
           <div className="mt-10">
             <BtnSolid href="mailto:austin@manifest.is">Become a Sponsor</BtnSolid>
@@ -392,7 +452,7 @@ export default function Manifest2026() {
       <Divider />
 
       {/* SCHEDULE */}
-      <section id="schedule" className="scroll-mt-16 py-16 sm:py-24">
+      <section id="schedule" className="scroll-mt-16 py-16 sm:py-24 hidden">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <h2 className="mb-6 font-cinzel-decorative text-3xl font-normal tracking-wide sm:text-5xl">
             Schedule
@@ -404,7 +464,7 @@ export default function Manifest2026() {
         </div>
       </section>
 
-      <Divider />
+      {/* <Divider /> */}
 
       {/* PRICING */}
       <section id="tickets" className="scroll-mt-16 py-16 sm:py-24">
@@ -433,7 +493,7 @@ export default function Manifest2026() {
       <Divider />
 
       {/* ACTIVE MARKETS */}
-      <section id="markets" className="scroll-mt-16 py-16 sm:py-24">
+      <section id="markets" className="scroll-mt-16 py-16 sm:py-24 hidden">
         <div className="mx-auto max-w-5xl px-6">
           <div className="mb-10 flex items-center justify-between">
             <h2 className="font-cinzel-decorative text-3xl font-normal tracking-wide sm:text-5xl">
@@ -456,7 +516,7 @@ export default function Manifest2026() {
         </div>
       </section>
 
-      <Divider />
+      {/* <Divider /> */}
 
       {/* FAQ */}
       <section id="faq" className="scroll-mt-16 py-16 sm:py-24">
