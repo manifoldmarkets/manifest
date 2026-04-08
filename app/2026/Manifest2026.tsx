@@ -193,7 +193,7 @@ export default function Manifest2026() {
             Manifest 2026
           </h1>
           <p className="animate-m26-fade-up-1 mt-4 font-cinzel text-sm font-bold text-m26-purple-deep sm:text-2xl">
-            A Festival of Forecasting &amp; Prediction Markets
+            A festival for predictions, and markets thereof
           </p>
           <p className="animate-m26-fade-up-1 mt-2 font-cinzel text-xs font-bold text-m26-purple-deep/70 sm:text-lg">
             June 12&ndash;14, 2026 | Lighthaven, Berkeley, CA
