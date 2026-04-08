@@ -9,7 +9,8 @@ const SPEAKERS = [
   { name: 'Nate Silver', bio: 'Silver Bulletin', image: '/images/speakers/nate.jpg' },
   { name: 'Scott Alexander', bio: 'Astral Codex Ten', image: '/images/speakers/scott.jpg' },
   { name: 'Chris Best', bio: 'Substack', image: '/images/speakers/chris.jpg' },
-  { name: 'Allison Duettmann', bio: 'Foresight', image: '/images/speakers/allison.jpg' },
+  { name: 'Luana Lopes Lara', bio: 'Kalshi', image: '/images/speakers/luana.jpg' },
+  // { name: 'Allison Duettmann', bio: 'Foresight', image: '/images/speakers/allison.jpg' },
   { name: 'Emmett Shear', bio: 'Softmax', image: '/images/speakers/emmett.jpg' },
   { name: 'Joe Carlsmith', bio: 'Anthropic', image: '/images/speakers/joe.jpg' },
   { name: 'David Shor', bio: 'Blue Rose Research', image: '/images/speakers/davidshor.jpg' },
@@ -29,7 +30,7 @@ const SPECIAL_GUESTS = [
   'Samo Burja', 'Samuel Hammond', 'Scott Sumner', 'Sholto Douglas',
   'Steve Hsu', 'Tracing Woodgrains', 'Roon', 'Paul Gu', 'Dwarkesh Patel',
   'Ajeya Cotra', 'Noah Smith', 'Aella', 'Stephen Grugett',
-  'Eliezer Yudkowsky', 'Katja Grace',
+  'Eliezer Yudkowsky', 'Katja Grace', 'Tarek Mansour', 'Shayne Coplan', 'Allison Duettmann',
 ]
 
 const TESTIMONIALS = [
@@ -244,7 +245,7 @@ export default function Manifest2026() {
           <p className="animate-m26-fade-up-1 mt-4 font-cinzel text-sm font-bold text-m26-purple-deep sm:text-2xl">
             A festival for predictions, <br />and markets thereof
           </p>
-          <p className="animate-m26-fade-up-1 mt-2 font-cinzel text-xs font-bold text-m26-purple-deep/70 sm:text-lg">
+          <p className="animate-m26-fade-up-1 mt-24 font-cinzel text-xs font-bold text-m26-purple-deep/70 sm:text-lg">
             June 12&ndash;14, 2026 | Lighthaven, Berkeley, CA
           </p>
 
