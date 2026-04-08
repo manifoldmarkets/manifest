@@ -6,14 +6,30 @@ import { useEffect, useState } from 'react'
 
 // -- Data --
 const SPEAKERS = [
-  { name: 'Nate Silver', bio: 'Forecaster', image: '/images/speakers/nate.jpg' },
-  { name: 'Scott Alexander', bio: 'Writer', image: '/images/speakers/scott.jpg' },
-  { name: 'Chris Best', bio: 'Technologist', image: '/images/speakers/chris.jpg' },
-  { name: 'Allison Duettmann', bio: 'Expert', image: '/images/speakers/allison.jpg' },
-  { name: 'Emmett Shear', bio: 'Builder', image: '/images/speakers/emmett.jpg' },
-  { name: 'Joe Carlsmith', bio: 'Researcher', image: '/images/speakers/joe.jpg' },
-  { name: 'David Shor', bio: 'Builder', image: '/images/speakers/davidshor.jpg' },
-  { name: 'Laura Deming', bio: 'Scientist', image: '/images/speakers/laura.jpg' },
+  { name: 'Nate Silver', bio: 'Silver Bulletin', image: '/images/speakers/nate.jpg' },
+  { name: 'Scott Alexander', bio: 'Astral Codex Ten', image: '/images/speakers/scott.jpg' },
+  { name: 'Chris Best', bio: 'Substack', image: '/images/speakers/chris.jpg' },
+  { name: 'Allison Duettmann', bio: 'Foresight', image: '/images/speakers/allison.jpg' },
+  { name: 'Emmett Shear', bio: 'Softmax', image: '/images/speakers/emmett.jpg' },
+  { name: 'Joe Carlsmith', bio: 'Anthropic', image: '/images/speakers/joe.jpg' },
+  { name: 'David Shor', bio: 'Blue Rose Research', image: '/images/speakers/davidshor.jpg' },
+  { name: 'Laura Deming', bio: 'Cradle', image: '/images/speakers/laura.jpg' },
+  { name: 'Patrick McKenzie', bio: 'Writer', image: '/images/speakers/patrick.jpg' },
+  { name: 'Robin Hanson', bio: 'Economist', image: '/images/speakers/robin.jpg' },
+]
+
+const SPECIAL_GUESTS = [
+  'Aidan McLaughlin', 'Alex Gajewski', 'Cremieux', 'Danielle Fong',
+  'Dave White', 'David Holt', 'Divya Siddarth', 'Dylan Matthews',
+  'Dylan Patel', 'Gwern Branwen',
+  'Jay Baxter', 'Kevin Roose', 'Kyle Schiller',
+  'Lars Doucet', 'Lincoln Quirk', 'Nate Soares',
+  'Noam Brown', 'Oliver Habryka',
+  'Panda Smith', 'Ric Best', 'Richard Hanania', 'Rob Miles',
+  'Samo Burja', 'Samuel Hammond', 'Scott Sumner', 'Sholto Douglas',
+  'Steve Hsu', 'Tracing Woodgrains', 'Roon', 'Paul Gu', 'Dwarkesh Patel',
+  'Ajeya Cotra', 'Noah Smith', 'Aella', 'Stephen Grugett',
+  'Eliezer Yudkowsky', 'Katja Grace',
 ]
 
 const TESTIMONIALS = [
@@ -259,7 +275,7 @@ export default function Manifest2026() {
           <h2 className="mb-12 text-center font-cinzel-decorative text-3xl font-normal tracking-wide sm:text-5xl">
             Speakers, of years past
           </h2>
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-4 sm:gap-8">
+          <div className="grid grid-cols-3 gap-6 sm:grid-cols-5 sm:gap-8">
             {SPEAKERS.map((s) => (
               <div key={s.name} className="flex flex-col items-center">
                 <div className="relative h-24 w-24 overflow-hidden rounded-full shadow-lg sm:h-28 sm:w-28">
@@ -270,6 +286,17 @@ export default function Manifest2026() {
               </div>
             ))}
           </div>
+          <div className="mt-10 text-center">
+            <p className="mb-4 font-cinzel text-sm font-bold tracking-wider text-m26-purple uppercase">And past appearances from</p>
+            <p className="mx-auto max-w-3xl font-baskerville text-sm leading-relaxed text-m26-muted">
+              {SPECIAL_GUESTS.sort().map((name, i) => (
+                <span key={name}><span className="whitespace-nowrap mx-1">{name}</span>{' · '}</span>
+              ))}
+            </p>
+          </div>
+          <p className="mt-10 text-center font-cinzel text-md italic tracking-wide text-m26-purple/70">
+            Stay tuned as we announce speakers &amp; guests for 2026
+          </p>
         </div>
       </section>
 
