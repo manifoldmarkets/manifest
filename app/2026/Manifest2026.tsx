@@ -408,12 +408,12 @@ export default function Manifest2026() {
 
       {/* FOOTER */}
       <footer className="py-8 text-center">
-        <p className="text-xs tracking-wide text-m26-muted">
+        {/* <p className="text-xs tracking-wide text-m26-muted">
           &copy; 2026 Manifest. Built with love in Berkeley, CA.
-        </p>
+        </p> */}
         <div className="mt-3 flex justify-center gap-6 font-cinzel text-xs">
           <a href="https://discord.com/invite/MjDqMcQFdR" target="_blank" rel="noopener noreferrer" className="text-m26-purple hover:opacity-70">Discord</a>
-          <a href="https://twitter.com/ManifestConf" target="_blank" rel="noopener noreferrer" className="text-m26-purple hover:opacity-70">Twitter</a>
+          {/* <a href="https://twitter.com/ManifestConf" target="_blank" rel="noopener noreferrer" className="text-m26-purple hover:opacity-70">Twitter</a> */}
           <Link href="/2025" className="text-m26-purple hover:opacity-70">Manifest 2025</Link>
         </div>
       </footer>
