@@ -60,6 +60,33 @@ const ORGANIZERS = [
 // Asymmetric pill: top-left and bottom-right rounded
 const PILL = 'rounded-tl-full rounded-br-full'
 
+// Renders an image in a single flat color using CSS mask.
+// Every opaque pixel becomes `color`; transparent stays transparent.
+function MonoImage({ src, alt, color = '#6b5b8d', width, height, className = '' }: {
+  src: string; alt: string; color?: string; width: number; height: number; className?: string
+}) {
+  return (
+    <div
+      className={className}
+      style={{
+        backgroundColor: color,
+        WebkitMaskImage: `url(${src})`,
+        maskImage: `url(${src})`,
+        WebkitMaskSize: 'contain',
+        maskSize: 'contain',
+        WebkitMaskRepeat: 'no-repeat',
+        maskRepeat: 'no-repeat',
+        WebkitMaskPosition: 'center',
+        maskPosition: 'center',
+        width,
+        height,
+      }}
+      role="img"
+      aria-label={alt}
+    />
+  )
+}
+
 // Section divider: purple line, thick center fading to edges
 function Divider() {
   return (
@@ -224,7 +251,7 @@ export default function Manifest2026() {
           <div className="flex flex-col items-center gap-8">
             {SPONSORS.map((s) => (
               <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer">
-                <Image src={s.image} alt={s.name} width={280} height={60} className={`${s.size} w-auto object-contain`} />
+                <MonoImage src={s.image} alt={s.name} width={280} height={60} className={s.size} />
               </a>
             ))}
           </div>
