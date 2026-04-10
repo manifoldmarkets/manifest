@@ -327,7 +327,7 @@ export default function Manifest2026() {
                 className="group mb-6 block break-inside-avoid rounded-tl-2xl rounded-br-2xl border border-m26-purple/20 bg-m26-cream/80 p-6 transition-all hover:border-m26-purple/40 hover:shadow-lg sm:p-8"
               >
                 {/* <span className="mb-3 block font-cinzel-decorative text-3xl leading-none text-m26-lav-mid select-none">&ldquo;</span> */}
-                <p className="font-baskerville text-sm italic leading-relaxed text-m26-purple-deep sm:text-base">
+                <p className="font-baskerville leading-relaxed text-m26-purple-deep">
                   {t.quote}
                 </p>
                 <p className="text-right mt-4 font-cinzel text-xs font-bold tracking-wider text-m26-purple uppercase transition-colors group-hover:text-m26-purple-deep">
