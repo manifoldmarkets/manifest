@@ -30,7 +30,7 @@ const SPECIAL_GUESTS = [
   'Samo Burja', 'Samuel Hammond', 'Scott Sumner', 'Sholto Douglas',
   'Steve Hsu', 'Tracing Woodgrains', 'Roon', 'Paul Gu', 'Dwarkesh Patel',
   'Ajeya Cotra', 'Noah Smith', 'Aella', 'Stephen Grugett',
-  'Eliezer Yudkowsky', 'Katja Grace', 'Tarek Mansour', 'Shayne Coplan', 'Allison Duettmann',
+  'Eliezer Yudkowsky', 'Katja Grace', 'Tarek Mansour', 'Shayne Coplan', 'Allison Duettmann', 'Zvi Mowshowitz',
 ]
 
 const TESTIMONIALS = [
@@ -76,15 +76,15 @@ const MARKETS = [
 ]
 
 const FAQS = [
-  { q: 'What is Manifest?', a: 'Manifest is a festival of forecasting and prediction markets, bringing together people who forecast the future, care about the future going well, and who build an interesting future.' },
+  { q: 'What is Manifest?', a: 'Manifest is a festival of forecasting and prediction markets, bringing together people who care about the future and are willing to put their money where their mouth is.' },
   { q: 'Where is it located?', a: 'Lighthaven, 2740 Telegraph Avenue, Berkeley, CA 94705.' },
   // { q: 'What is the address?', a: '2740 Telegraph Avenue, Berkeley, CA 94705.' },
-  { q: 'Will accommodation be available for purchase?', a: 'Yes! We are selling rooms at Lighthaven. Space is limited, so most attendees will need to find other accommodations nearby.' },
+  { q: 'Will accommodation be available for purchase?', a: 'Yes! Lighthaven has rooms available for ticketholders. Space is limited, so most attendees will need to find other accommodations nearby.' },
   { q: 'What sorts of things will happen at Manifest?', a: 'Talks, panels, debates, workshops, prediction market tournaments, a night market, career fair, and much more. Full schedule coming soon!' },
   { q: 'How many people will be at Manifest?', a: 'We expect around 500-700 attendees across the weekend.' },
   { q: 'What does my ticket include?', a: 'Access from Friday through Sunday, including breakfast, lunch, and dinner each day.' },
   { q: 'Can I bring my kids?', a: "You're welcome to bring your kids, but there isn't kids-focused programming this year." },
-  { q: 'Can I come for just part of the event?', a: 'Sure! As much or as little as you want.' },
+  // { q: 'Can I come for just part of the event?', a: 'Sure! As much or as little as you want.' },
   { q: 'How does volunteering work?', a: "We'll have volunteer opportunities closer to the event. Join our Discord to stay updated!" },
   { q: 'What is your refund policy?', a: 'Full refunds are available up to 30 days before the event. After that, tickets are transferable but non-refundable.' },
 ]
