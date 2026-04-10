@@ -217,18 +217,18 @@ export default function Manifest2026() {
       {/* HERO — full viewport with image, then fades into parchment below */}
       <section className="relative">
         {/* Image container: taller than viewport so it extends below the fold */}
-        <div className="relative h-[130vh]">
+        <div className="relative h-[100vh]">
           <Image
-            src="/images/2026/header.png"
+            src="/images/2026/midjourney-1.png"
             alt="Manifest 2026"
             fill
             className="object-cover object-center"
             priority
           />
           {/* Uniform warm overlay on the visible first screen */}
-          <div className="absolute inset-0 bg-m26-parchment/60" />
+          {/* <div className="absolute inset-0 bg-m26-parchment/20" /> */}
           {/* Gradient at the bottom to fade image into parchment bg */}
-          <div className="absolute inset-x-0 bottom-0 h-[30vh] bg-gradient-to-t from-m26-parchment to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-[10vh] bg-gradient-to-t from-m26-parchment to-transparent" />
         </div>
 
         {/* Content pinned to center of first viewport */}
@@ -239,33 +239,25 @@ export default function Manifest2026() {
           <p className="animate-m26-fade-up-1 mt-4 font-cinzel text-sm font-bold text-m26-purple-deep sm:text-2xl">
             A festival for predictions, <br />and markets thereof
           </p>
-          <p className="animate-m26-fade-up-1 sm:mt-36 mt-12 font-cinzel text-xs font-bold text-m26-purple-deep/70 sm:text-lg">
-            June 12&ndash;14, 2026 | Berkeley, CA
-          </p>
-
-          {/* Countdown */}
-          {/* <div className="animate-m26-fade-up-2 mt-10 flex gap-8 font-cinzel sm:gap-12">
-            {[
-              { value: days, label: 'Days' },
-              { value: hours, label: 'Hours' },
-              { value: minutes, label: 'Minutes' },
-            ].map(({ value, label }) => (
-              <div key={label} className="flex flex-col items-center">
-                <span className="text-4xl font-bold sm:text-5xl">{value}</span>
-                <span className="mt-1 text-xs tracking-wider font-bold text-m26-purple-deep/90">{label}</span>
-              </div>
-            ))}
-          </div> */}
-
-          <div className="animate-m26-fade-up-3 mt-6 flex flex-wrap justify-center gap-4">
-            <BtnOutline href="mailto:team@manifest.is" className="px-8 py-3.5 text-lg">Contact Us</BtnOutline>
-            <BtnSolid href="#tickets" className="px-8 py-3.5 text-lg">Register</BtnSolid>
+          <div className="animate-m26-fade-up-2 sm:mt-64 mt-12 relative">
+            <div className="relative z-10 flex flex-col items-center gap-4 border border-m26-cream/80 bg-m26-parchment/50 px-6 py-3 sm:px-8 sm:py-5 shadow-lg backdrop-blur-md sm:flex-row sm:gap-8">
+              <span className="font-cinzel text-sm font-bold tracking-wide text-m26-purple-deep sm:text-lg">
+                June 12&ndash;14, 2026 &nbsp;|&nbsp; Berkeley, CA
+              </span>
+              <a href="#tickets" className={`${PILL} bg-m26-btn px-7 py-3 font-cinzel text-sm font-bold tracking-wider text-white transition-colors hover:bg-m26-btn-hover sm:text-base`}>
+                Register
+              </a>
+            </div>
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute -inset-2 z-0 rounded-tl-3xl rounded-br-3xl bg-gradient-to-br from-m26-cream/40 to-m26-lav/20 blur-xl opacity-70"
+            />
           </div>
         </div>
       </section>
 
       {/* SPEAKERS */}
-      <section id="speakers" className="relative z-10 scroll-mt-16 mt-[-30vh] pb-16 sm:py-24">
+      <section id="speakers" className="relative z-10 scroll-mt-16 mt-[5vh] pb-16 sm:py-24">
         <div className="mx-auto max-w-5xl px-6">
           <h2 className="mb-12 text-center font-cinzel-decorative text-3xl font-normal tracking-wide sm:text-5xl">
             Speakers, of years past
