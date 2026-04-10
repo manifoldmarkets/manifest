@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 // -- Data --
 const SPEAKERS = [
@@ -73,12 +73,6 @@ const MARKETS = [
   { name: 'Book Market', desc: 'Got a book? Essay? Poem? Share your physical prints' },
   { name: 'Information Market', desc: 'Like a poster session, but without the academic standards' },
   { name: 'Black Market', desc: "Naming rights to a baby's middle name, 'probiotics', etc" },
-]
-
-const PRICING = [
-  { name: 'Weekend Access', price: '$550', unit: '/Pass', desc: 'Friday evening through Sunday. 5 meals included.', cta: 'Select Weekend' },
-  { name: 'Day Access', price: '$430', unit: '/Pass', desc: 'Single day access to Manifest. Meals included.', cta: 'Select Day' },
-  { name: 'Volunteer Pass', price: '$225', unit: '/Pass', desc: 'Discounted weekend pass for those who want to help.', cta: 'Select Volunteer' },
 ]
 
 const FAQS = [
@@ -173,6 +167,34 @@ function FAQRow({ q, a }: { q: string; a: string }) {
         </p>
       )}
     </div>
+  )
+}
+
+// -- Auto-resizing iframe that listens for postMessage height --
+function ResizingIframe({ src, title, minHeight = 800 }: { src: string; title: string; minHeight?: number }) {
+  const iframeRef = useRef<HTMLIFrameElement>(null)
+  const [height, setHeight] = useState(minHeight)
+
+  useEffect(() => {
+    const handleMessage = (e: MessageEvent) => {
+      // Accept height from the iframe's origin
+      if (iframeRef.current && e.source === iframeRef.current.contentWindow) {
+        const h = e.data?.height ?? e.data?.frameHeight ?? (typeof e.data === 'number' ? e.data : null)
+        if (typeof h === 'number' && h > 0) setHeight(h)
+      }
+    }
+    window.addEventListener('message', handleMessage)
+    return () => window.removeEventListener('message', handleMessage)
+  }, [])
+
+  return (
+    <iframe
+      ref={iframeRef}
+      src={src}
+      title={title}
+      className="w-full border-0"
+      style={{ height }}
+    />
   )
 }
 
@@ -460,25 +482,15 @@ export default function Manifest2026() {
 
       {/* PRICING */}
       <section id="tickets" className="scroll-mt-16 py-16 sm:py-24">
-        <div className="mx-auto max-w-5xl px-6">
-          <h2 className="mb-12 text-center font-cinzel-decorative text-3xl font-normal tracking-wide sm:text-5xl">
+        <div className="mx-auto max-w-6xl px-6">
+          {/* <h2 className="mb-12 text-center font-cinzel-decorative text-3xl font-normal tracking-wide sm:text-5xl">
             Claim Your Seat
-          </h2>
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-            {PRICING.map((t) => (
-              <div key={t.name} className="flex flex-col items-center rounded-xl border border-m26-purple bg-m26-purple/75 p-8 text-center text-white">
-                <p className="mb-3 font-cinzel text-sm font-bold tracking-wider uppercase">{t.name}</p>
-                <p className="mb-1 font-cinzel text-4xl font-bold sm:text-5xl">
-                  {t.price}
-                  <span className="text-base font-normal opacity-80">{t.unit}</span>
-                </p>
-                <p className="mb-6 mt-3 text-sm leading-relaxed opacity-90">{t.desc}</p>
-                <a href="#" className={`${PILL} mt-auto bg-white px-6 py-3 font-cinzel text-sm font-bold text-m26-purple transition-colors hover:bg-white/90`}>
-                  {t.cta}
-                </a>
-              </div>
-            ))}
-          </div>
+          </h2> */}
+          <ResizingIframe
+            src="https://lightcone-factotum-git-manifest-ticket-embed-lesswrong.vercel.app/manifest-embed"
+            title="Manifest 2026 Tickets"
+            minHeight={1200}
+          />
         </div>
       </section>
 
