@@ -91,7 +91,7 @@ const FAQS = [
 
 const ORGANIZERS = [
   { name: 'Winter', image: '/images/staff/winter.png', email: 'winter@manifest.is' },
-  { name: 'NJ', image: '/images/staff/nj.jpg', email: 'nj@manifest.is' },
+  // { name: 'NJ', image: '/images/staff/nj.jpg', email: 'nj@manifest.is' },
   { name: 'Austin', image: '/images/staff/austin.jpg', email: 'austin@manifest.is' },
 ]
 
@@ -262,14 +262,34 @@ export default function Manifest2026() {
             A festival for predictions, <br />and markets thereof
           </p>
           <div className="animate-m26-fade-up-2 sm:mt-64 mt-12 relative">
-            <div className="relative z-10 flex flex-col items-center gap-4 border border-m26-cream/80 bg-m26-parchment/50 px-6 py-3 sm:px-8 sm:py-5 shadow-lg backdrop-blur-md sm:flex-row sm:gap-8">
+            <div className="relative z-10 flex flex-col items-center gap-12 bg-none px-4 py-2 bg-m26-parchment/50 backdrop-blur-md sm:gap-4 sm:px-8 sm:py-4 border border-m26-purple-deep">
               <span className="font-cinzel text-sm font-bold tracking-wide text-m26-purple-deep sm:text-lg">
                 June 12&ndash;14, 2026 &nbsp;|&nbsp; Berkeley, CA
               </span>
-              <a href="#tickets" className={`${PILL} bg-m26-btn px-7 py-3 font-cinzel text-sm font-bold tracking-wider text-white transition-colors hover:bg-m26-btn-hover sm:text-base`}>
+
+            {/* <div className="h-8"></div> */}
+
+              <a
+                href="#tickets"
+                className={`
+                  ${PILL}
+                  bg-m26-btn
+                  px-12 py-4
+                  font-cinzel
+                  text-lg
+                  font-bold
+                  tracking-wider
+                  text-white
+                  transition-colors
+                  hover:bg-m26-btn-hover
+                  sm:text-xl
+                `}
+              >
                 Register
               </a>
-            </div>
+              </div>
+
+         
             <span
               aria-hidden="true"
               className="pointer-events-none absolute -inset-2 z-0 rounded-tl-3xl rounded-br-3xl bg-gradient-to-br from-m26-cream/40 to-m26-lav/20 blur-xl opacity-70"
@@ -489,7 +509,7 @@ export default function Manifest2026() {
           <ResizingIframe
             src="https://lightcone-factotum-git-manifest-ticket-embed-lesswrong.vercel.app/manifest-embed"
             title="Manifest 2026 Tickets"
-            minHeight={1200}
+            minHeight={600}
           />
         </div>
       </section>
