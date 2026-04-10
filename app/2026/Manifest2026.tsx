@@ -170,6 +170,71 @@ function FAQRow({ q, a }: { q: string; a: string }) {
   )
 }
 
+// -- Gallery tile + lightbox --
+function GalleryTile({
+  src,
+  onClick,
+  className = '',
+  sizes,
+}: {
+  src: string
+  onClick: (src: string) => void
+  className?: string
+  sizes: string
+}) {
+  return (
+    <button
+      type="button"
+      onClick={() => onClick(src)}
+      className={`group relative overflow-hidden rounded-tl-2xl rounded-br-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-m26-purple/40 focus:outline-none focus:ring-2 focus:ring-m26-purple ${className}`}
+    >
+      <Image
+        src={src}
+        alt="Manifest scene"
+        fill
+        className="object-cover transition-transform duration-500 group-hover:scale-105"
+        sizes={sizes}
+      />
+      <div className="pointer-events-none absolute inset-0 bg-m26-purple-dark/0 transition-colors duration-300 group-hover:bg-m26-purple-dark/15" />
+    </button>
+  )
+}
+
+function Lightbox({ src, onClose }: { src: string | null; onClose: () => void }) {
+  useEffect(() => {
+    if (!src) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose()
+    }
+    document.addEventListener('keydown', onKey)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      document.body.style.overflow = ''
+    }
+  }, [src, onClose])
+
+  if (!src) return null
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-neutral-900/90 p-4 backdrop-blur-sm"
+      onClick={onClose}
+    >
+      <button
+        type="button"
+        aria-label="Close"
+        onClick={onClose}
+        className="absolute right-4 top-4 font-cinzel text-2xl font-bold text-m26-parchment/80 transition-colors hover:text-m26-parchment sm:right-8 sm:top-8 sm:text-3xl"
+      >
+        &times;
+      </button>
+      <div className="relative h-full max-h-[95vh] w-full">
+        <Image src={src} alt="Manifest scene" fill className="object-contain" sizes="100vw" />
+      </div>
+    </div>
+  )
+}
+
 // -- Auto-resizing iframe that listens for postMessage height --
 function ResizingIframe({ src, title, minHeight = 800 }: { src: string; title: string; minHeight?: number }) {
   const iframeRef = useRef<HTMLIFrameElement>(null)
@@ -218,9 +283,11 @@ function BtnOutline({ href, children, className = '' }: { href: string; children
 // -- Main Component --
 export default function Manifest2026() {
   const { days, hours, minutes } = useCountdown(new Date('2026-06-12T09:00:00-07:00'))
+  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null)
 
   return (
     <div className="bg-m26-parchment font-baskerville text-m26-purple-deep">
+      <Lightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />
       {/* NAV */}
       <nav className="fixed top-0 flex w-full items-center justify-between bg-m26-parchment/30 px-6 py-3 backdrop-blur-sm z-50">
         <span className="font-cinzel text-sm font-bold tracking-tighter text-m26-purple uppercase">
@@ -349,49 +416,18 @@ export default function Manifest2026() {
           </h2>
           {/* Mosaic layout: varied spans for visual rhythm */}
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
-            {/* Row 1: wide + square + square */}
-            <div className="relative col-span-2 aspect-[2/1] overflow-hidden rounded-tl-2xl rounded-br-2xl">
-              <Image src="/images/gallery/1.jpg" alt="Manifest scene" fill className="object-cover" sizes="(min-width:640px) 50vw, 100vw" />
-            </div>
-            <div className="relative aspect-square overflow-hidden rounded-tl-2xl rounded-br-2xl">
-              <Image src="/images/gallery/2.jpg" alt="Manifest scene" fill className="object-cover" sizes="25vw" />
-            </div>
-            <div className="relative aspect-square overflow-hidden rounded-tl-2xl rounded-br-2xl">
-              <Image src="/images/gallery/3.jpg" alt="Manifest scene" fill className="object-cover" sizes="25vw" />
-            </div>
-
-            {/* Row 2: square + tall (spans 2 rows) + square */}
-            <div className="relative aspect-square overflow-hidden rounded-tl-2xl rounded-br-2xl">
-              <Image src="/images/gallery/4.jpg" alt="Manifest scene" fill className="object-cover" sizes="25vw" />
-            </div>
-            <div className="relative row-span-2 overflow-hidden rounded-tl-2xl rounded-br-2xl">
-              <Image src="/images/gallery/5.jpg" alt="Manifest scene" fill className="object-cover" sizes="25vw" />
-            </div>
-            <div className="relative aspect-square overflow-hidden rounded-tl-2xl rounded-br-2xl">
-              <Image src="/images/gallery/6.jpg" alt="Manifest scene" fill className="object-cover" sizes="25vw" />
-            </div>
-            <div className="relative aspect-square overflow-hidden rounded-tl-2xl rounded-br-2xl">
-              <Image src="/images/gallery/7.jpg" alt="Manifest scene" fill className="object-cover" sizes="25vw" />
-            </div>
-
-            {/* Row 3: square + (tall still) + wide */}
-            <div className="relative aspect-square overflow-hidden rounded-tl-2xl rounded-br-2xl">
-              <Image src="/images/gallery/8.jpg" alt="Manifest scene" fill className="object-cover" sizes="25vw" />
-            </div>
-            <div className="relative col-span-2 aspect-[2/1] overflow-hidden rounded-tl-2xl rounded-br-2xl">
-              <Image src="/images/gallery/9.jpg" alt="Manifest scene" fill className="object-cover" sizes="(min-width:640px) 50vw, 100vw" />
-            </div>
-
-            {/* Row 4: square + square + wide */}
-            <div className="relative aspect-square overflow-hidden rounded-tl-2xl rounded-br-2xl">
-              <Image src="/images/gallery/10.jpg" alt="Manifest scene" fill className="object-cover" sizes="25vw" />
-            </div>
-            <div className="relative aspect-square overflow-hidden rounded-tl-2xl rounded-br-2xl">
-              <Image src="/images/gallery/11.jpg" alt="Manifest scene" fill className="object-cover" sizes="25vw" />
-            </div>
-            <div className="relative col-span-2 aspect-[2/1] overflow-hidden rounded-tl-2xl rounded-br-2xl">
-              <Image src="/images/gallery/12.jpg" alt="Manifest scene" fill className="object-cover" sizes="(min-width:640px) 50vw, 100vw" />
-            </div>
+            <GalleryTile src="/images/gallery/1.jpg" onClick={setLightboxSrc} className="col-span-2 aspect-[2/1]" sizes="(min-width:640px) 50vw, 100vw" />
+            <GalleryTile src="/images/gallery/2.jpg" onClick={setLightboxSrc} className="aspect-square" sizes="25vw" />
+            <GalleryTile src="/images/gallery/3.jpg" onClick={setLightboxSrc} className="aspect-square" sizes="25vw" />
+            <GalleryTile src="/images/gallery/4.jpg" onClick={setLightboxSrc} className="aspect-square" sizes="25vw" />
+            <GalleryTile src="/images/gallery/5.jpg" onClick={setLightboxSrc} className="row-span-2" sizes="25vw" />
+            <GalleryTile src="/images/gallery/6.jpg" onClick={setLightboxSrc} className="aspect-square" sizes="25vw" />
+            <GalleryTile src="/images/gallery/7.jpg" onClick={setLightboxSrc} className="aspect-square" sizes="25vw" />
+            <GalleryTile src="/images/gallery/8.jpg" onClick={setLightboxSrc} className="aspect-square" sizes="25vw" />
+            <GalleryTile src="/images/gallery/9.jpg" onClick={setLightboxSrc} className="col-span-2 aspect-[2/1]" sizes="(min-width:640px) 50vw, 100vw" />
+            <GalleryTile src="/images/gallery/10.jpg" onClick={setLightboxSrc} className="aspect-square" sizes="25vw" />
+            <GalleryTile src="/images/gallery/11.jpg" onClick={setLightboxSrc} className="aspect-square" sizes="25vw" />
+            <GalleryTile src="/images/gallery/12.jpg" onClick={setLightboxSrc} className="col-span-2 aspect-[2/1]" sizes="(min-width:640px) 50vw, 100vw" />
           </div>
         </div>
       </section>
