@@ -35,27 +35,27 @@ const libreBaskerville = Libre_Baskerville({
 
 export const metadata: Metadata = {
   title: 'Manifest 2026',
-  description: 'A festival of forecasting & prediction markets. June 12-14, 2026 · Lighthaven, Berkeley, CA.',
+  description: 'A festival for prediction markets & the future. June 12-14, 2026 · Berkeley, CA.',
   icons: {
     icon: '/manifold-logo.ico',
   },
   openGraph: {
     title: 'Manifest 2026',
-    description: 'A festival of forecasting & prediction markets. June 12-14, 2026 · Lighthaven, Berkeley, CA.',
+    description: 'A festival for prediction markets & the future. June 12-14, 2026 · Berkeley, CA.',
     images: [
       {
-        url: '/images/2026/header.png',
+        url: '/images/2026/manifest-2026-og.jpeg',
         width: 1800,
         height: 900,
-        alt: 'Manifest 2026 - A festival of forecasting & prediction markets',
+        alt: 'Manifest 2026 - A festival for prediction markets & the future',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Manifest 2026',
-    description: 'A festival of forecasting & prediction markets. June 12-14, 2026 · Lighthaven, Berkeley, CA.',
-    images: ['/images/2026/header.png'],
+    description: 'A festival for prediction markets & the future. June 12-14, 2026 · Berkeley, CA.',
+    images: ['/images/2026/manifest-2026-og.jpeg'],
   },
 }
 
