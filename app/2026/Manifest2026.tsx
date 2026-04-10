@@ -76,11 +76,11 @@ const MARKETS = [
 ]
 
 const FAQS = [
-  { q: 'What is Manifest?', a: 'Manifest is a festival of forecasting and prediction markets, bringing together people who care about the future and are willing to put their money where their mouth is.' },
+  { q: 'What is Manifest?', a: 'Manifest is a festival of forecasting and prediction markets, bringing together people who think deeply about the future and put their money where their mouth is.' },
   { q: 'Where is it located?', a: 'Lighthaven, 2740 Telegraph Avenue, Berkeley, CA 94705.' },
   // { q: 'What is the address?', a: '2740 Telegraph Avenue, Berkeley, CA 94705.' },
   { q: 'Will accommodation be available for purchase?', a: 'Yes! Lighthaven has rooms available for ticketholders. Space is limited, so most attendees will need to find other accommodations nearby.' },
-  { q: 'What sorts of things will happen at Manifest?', a: 'Talks, panels, debates, workshops, prediction market tournaments, a night market, career fair, and much more. Full schedule coming soon!' },
+  { q: 'What sorts of things will happen at Manifest?', a: 'Talks, panels, debates, workshops, games, prediction market tournaments, a night market, career fair, and much more. Much of the schedule comes from attendee-led sessions!' },
   { q: 'How many people will be at Manifest?', a: 'We expect around 500-700 attendees across the weekend.' },
   { q: 'What does my ticket include?', a: 'Access from Friday through Sunday, including breakfast, lunch, and dinner each day.' },
   { q: 'Can I bring my kids?', a: "You're welcome to bring your kids, but there isn't kids-focused programming this year." },
@@ -474,18 +474,21 @@ export default function Manifest2026() {
                 The Night Market
               </h2>
               <p className="mb-4 font-cinzel text-xs tracking-wide text-m26-muted">
-                June 12 | Berkeley, CA
+                Friday, June 12 | Berkeley, CA
               </p>
               <p className="mb-6 text-sm leading-relaxed text-m26-muted">
                 The Night Market is back for the fourth year! An open-air evening
                 celebration of all things markets. It&rsquo;s a chance to meet people, share
-                ideas, see strange gadgets, and wander around in a transcendent twilight.
-                A very Bay Area World&rsquo;s Fair and a fun attempt to manifest the future.
+                ideas, see strange gadgets, and wander around in a transcendent twilight &mdash;
+                our little attempt to manifest the future.
+
+                <br /><br />
+                <span className="font-cinzel text-sm font-bold tracking-wider text-m26-purple">Open to the public - no ticket required!</span>
               </p>
-              <div className="flex flex-wrap gap-3">
+              {/* <div className="flex flex-wrap gap-3">
                 <BtnSolid href="#">Host Booth</BtnSolid>
                 <BtnOutline href="#">Preview last year</BtnOutline>
-              </div>
+              </div> */}
             </div>
             <div className="grid flex-1 grid-cols-2 gap-x-6 gap-y-5">
               {MARKETS.map((m) => (
