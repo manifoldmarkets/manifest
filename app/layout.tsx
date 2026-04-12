@@ -2,7 +2,7 @@ import { Bungee_Shade, Cinzel, Cinzel_Decorative, DM_Sans, Libre_Baskerville, Ou
 import type { Metadata } from 'next'
 import './globals.css'
 
-// const dmSans = DM_Sans({
+// const dmSans = DM_Sans({A
 //   variable: '--font-body',
 //   subsets: ['latin'],
 //   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     description: 'A festival for prediction markets & the future. June 12-14, 2026 · Berkeley, CA.',
     images: [
       {
-        url: '/images/2026/manifest-2026-og.jpeg',
+        url: '/images/2026/manifest-2026-og.png',
         width: 1800,
         height: 900,
         alt: 'Manifest 2026 - A festival for prediction markets & the future',
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Manifest 2026',
     description: 'A festival for prediction markets & the future. June 12-14, 2026 · Berkeley, CA.',
-    images: ['/images/2026/manifest-2026-og.jpeg'],
+    images: ['/images/2026/manifest-2026-og.png'],
   },
 }
 
