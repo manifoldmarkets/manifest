@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/images/2026/manifest-2026-og.png',
-        width: 1800,
-        height: 900,
+        width: 1200,
+        height: 630,
         alt: 'Manifest 2026 - A festival for prediction markets & the future',
       },
     ],
