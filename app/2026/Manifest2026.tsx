@@ -107,7 +107,7 @@ const FAQS = [
 ]
 
 const ORGANIZERS = [
-  { name: 'Winter', image: '/images/staff/winter.png', email: 'winter@manifest.is' },
+  { name: 'Winter', image: '/images/staff/winter.jpg', email: 'winter@manifest.is' },
   // { name: 'NJ', image: '/images/staff/nj.jpg', email: 'nj@manifest.is' },
   { name: 'Austin', image: '/images/staff/austin.jpg', email: 'austin@manifest.is' },
 ]
