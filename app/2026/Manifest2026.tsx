@@ -416,19 +416,30 @@ export default function Manifest2026() {
           </h2>
           {/* Mosaic layout: varied spans for visual rhythm */}
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
-            <GalleryTile src="/images/gallery/1.jpg" onClick={setLightboxSrc} className="col-span-2 aspect-[2/1]" sizes="(min-width:640px) 50vw, 100vw" />
-            <GalleryTile src="/images/gallery/2.jpg" onClick={setLightboxSrc} className="aspect-square" sizes="25vw" />
-            <GalleryTile src="/images/gallery/3.jpg" onClick={setLightboxSrc} className="aspect-square" sizes="25vw" />
-            <GalleryTile src="/images/gallery/4.jpg" onClick={setLightboxSrc} className="aspect-square" sizes="25vw" />
-            <GalleryTile src="/images/gallery/5.jpg" onClick={setLightboxSrc} className="row-span-2" sizes="25vw" />
-            <GalleryTile src="/images/gallery/6.jpg" onClick={setLightboxSrc} className="aspect-square" sizes="25vw" />
-            <GalleryTile src="/images/gallery/7.jpg" onClick={setLightboxSrc} className="aspect-square" sizes="25vw" />
-            <GalleryTile src="/images/gallery/8.jpg" onClick={setLightboxSrc} className="aspect-square" sizes="25vw" />
+            <GalleryTile src="/images/gallery/2025-5.jpg" onClick={setLightboxSrc} className="col-span-2 aspect-[2/1]" sizes="(min-width:640px) 50vw, 100vw" />
+            <GalleryTile src="/images/gallery/2025-8.jpg" onClick={setLightboxSrc} className="aspect-square" sizes="25vw" />
+            <GalleryTile src="/images/gallery/2025-3.jpg" onClick={setLightboxSrc} className="aspect-square" sizes="25vw" />
+            <GalleryTile src="/images/gallery/2025-2.jpg" onClick={setLightboxSrc} className="aspect-square" sizes="25vw" />
+            <GalleryTile src="/images/gallery/2025-1.jpg" onClick={setLightboxSrc} className="row-span-2" sizes="25vw" />
+            <GalleryTile src="/images/gallery/2025-7.jpg" onClick={setLightboxSrc} className="aspect-square" sizes="25vw" />
+            <GalleryTile src="/images/gallery/2025-11.jpg" onClick={setLightboxSrc} className="aspect-square" sizes="25vw" />
+            <GalleryTile src="/images/gallery/2025-9.jpg" onClick={setLightboxSrc} className="aspect-square" sizes="25vw" />
             <GalleryTile src="/images/gallery/9.jpg" onClick={setLightboxSrc} className="col-span-2 aspect-[2/1]" sizes="(min-width:640px) 50vw, 100vw" />
-            <GalleryTile src="/images/gallery/10.jpg" onClick={setLightboxSrc} className="aspect-square" sizes="25vw" />
-            <GalleryTile src="/images/gallery/11.jpg" onClick={setLightboxSrc} className="aspect-square" sizes="25vw" />
-            <GalleryTile src="/images/gallery/12.jpg" onClick={setLightboxSrc} className="col-span-2 aspect-[2/1]" sizes="(min-width:640px) 50vw, 100vw" />
+            <GalleryTile src="/images/gallery/2025-10.jpg" onClick={setLightboxSrc} className="aspect-square" sizes="25vw" />
+            <GalleryTile src="/images/gallery/2025-12.jpg" onClick={setLightboxSrc} className="aspect-square" sizes="25vw" />
+            <GalleryTile src="/images/gallery/2025-6.jpg" onClick={setLightboxSrc} className="col-span-2 aspect-[2/1]" sizes="(min-width:640px) 50vw, 100vw" />
           </div>
+          <p className="mt-6 text-right font-cinzel text-xs tracking-wider text-m26-purple/70 uppercase">
+            Photos courtesy of{' '}
+            <a
+              href="https://drethelin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-m26-purple/30 underline-offset-4 transition-colors hover:text-m26-purple-deep hover:decoration-m26-purple-deep"
+            >
+              Misha
+            </a>
+          </p>
         </div>
       </section>
 
