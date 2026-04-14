@@ -1,0 +1,47 @@
+/* Manifest 2025 specific styles */
+
+:root {
+  --color-ink-0: 255 255 255;
+  --color-ink-100: 236 237 248;
+  --color-ink-900: 22 21 55;
+  --color-canvas-0: 253 254 255;
+  --color-primary-600: 129 140 248;
+}
+
+.dark {
+  color-scheme: dark;
+  --color-ink-100: 236 237 248;
+  --color-ink-900: 22 21 55;
+  --color-canvas-0: 15 23 41;
+}
+
+.manifest-2025 {
+  @apply bg-canvas-0 font-serif text-ink-900 dark:bg-canvas-0 dark:text-ink-100;
+}
+
+.manifest-2025 h1,
+.manifest-2025 h2,
+.manifest-2025 h3,
+.manifest-2025 h4,
+.manifest-2025 h5,
+.manifest-2025 h6 {
+  @apply font-heading;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float 12s ease-in-out infinite;
+}

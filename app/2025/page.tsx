@@ -1,3 +1,4 @@
+import './2025.css'
 import Image from 'next/image'
 import Hero from '../components/Hero'
 import Navbar from '../components/Navbar'
@@ -42,7 +43,7 @@ export default async function Page() {
   )
 
   return (
-    <main className="dark:bg-ink-1000 relative min-h-screen bg-canvas-0 font-serif text-ink-900 transition-colors duration-300 dark:text-ink-100">
+    <main className="manifest-2025 dark:bg-ink-1000 relative min-h-screen bg-canvas-0 font-serif text-ink-900 transition-colors duration-300 dark:text-ink-100">
       <Navbar />
       <Hero />
 
