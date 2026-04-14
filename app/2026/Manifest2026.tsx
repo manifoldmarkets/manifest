@@ -31,6 +31,7 @@ const SPECIAL_GUESTS = [
   'Steve Hsu', 'Tracing Woodgrains', 'Roon', 'Paul Gu', 'Dwarkesh Patel',
   'Ajeya Cotra', 'Noah Smith', 'Aella', 'Stephen Grugett',
   'Eliezer Yudkowsky', 'Katja Grace', 'Tarek Mansour', 'Shayne Coplan', 'Allison Duettmann', 'Zvi Mowshowitz',
+  'Agnes Callard', 'Arnold Brooks',
 ]
 
 const TESTIMONIALS = [
@@ -306,7 +307,7 @@ export default function Manifest2026() {
       <Lightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />
       {/* NAV */}
       <nav className="fixed top-0 flex w-full items-center justify-between bg-m26-parchment/30 px-6 py-3 backdrop-blur-sm z-50">
-        <span className="font-cinzel text-sm font-bold tracking-tighter text-m26-purple uppercase">
+        <span className="font-cinzel text-sm font-bold text-m26-purple uppercase">
           Manifest 2026
         </span>
         <div className="flex items-center gap-6">
