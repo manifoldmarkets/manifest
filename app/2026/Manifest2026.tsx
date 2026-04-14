@@ -312,7 +312,7 @@ export default function Manifest2026() {
         <div className="flex items-center gap-6">
           <a href="#speakers" className="hidden font-cinzel text-sm font-bold text-m26-purple hover:opacity-70 sm:block">Home</a>
           <a href="#speakers" className="hidden font-cinzel text-sm font-bold text-m26-purple hover:opacity-70 sm:block">Speakers</a>
-          <a href="#schedule" className="hidden font-cinzel text-sm font-bold text-m26-purple hover:opacity-70 sm:block">Schedule</a>
+          {/* <a href="#schedule" className="hidden font-cinzel text-sm font-bold text-m26-purple hover:opacity-70 sm:block">Schedule</a> */}
           <a href="#tickets" className={`${PILL} bg-m26-btn px-5 py-2 font-cinzel text-sm font-bold text-white transition-colors hover:bg-m26-btn-hover`}>
             Register
           </a>
