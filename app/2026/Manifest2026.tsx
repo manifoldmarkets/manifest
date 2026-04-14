@@ -553,7 +553,7 @@ export default function Manifest2026() {
             Claim Your Seat
           </h2> */}
           <ResizingIframe
-            src="https://lightcone-factotum-git-manifest-ticket-embed-lesswrong.vercel.app/manifest-embed"
+            src="https://less.online/manifest-embed"
             title="Manifest 2026 Tickets"
             minHeight={600}
           />
