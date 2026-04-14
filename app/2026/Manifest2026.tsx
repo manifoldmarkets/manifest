@@ -20,7 +20,7 @@ const SPEAKERS = [
 ]
 
 const SPECIAL_GUESTS = [
-  'Aidan McLaughlin', 'Alex Gajewski', 'Cremieux', 'Danielle Fong',
+  'Aidan McLaughlin', 'Alex Gajewski', 'Danielle Fong',
   'Dave White', 'David Holt', 'Divya Siddarth', 'Dylan Matthews',
   'Dylan Patel', 'Gwern Branwen',
   'Jay Baxter', 'Kevin Roose', 'Kyle Schiller',
@@ -50,9 +50,9 @@ const TESTIMONIALS = [
     url: 'https://x.com/PabloPeniche/status/1932095093827334543',
   },
   {
-    quote: 'I ran into tons of people gambling on every little outcome\u2014sometimes with cash, sometimes with digital cash, in one case with crypto, and more often on Manifold. There was gambling on competitions, gambling on coin flips, gambling about how many people would attend a given talk, and even gambling done to ensure something happened.',
-    author: 'Cremieux',
-    url: 'https://www.cremieux.xyz/p/meetups-are-fun',
+    quote: 'Bess and I went to Manifest, which bills itself as “A festival for forecasting and prediction markets,” a description that may technically be true but fails to capture the spirit; to my eye and experience, it’s maybe more accurately stated as “Substack and Twitter live” or “a mixture of festival-conference-party-Burning-Man for nerds with many interests to show up and enjoy each other’s company.”',
+    author: 'Jake Seliger',
+    url: 'https://jakeseliger.com/2024/06/13/manifest-the-manifold-markets-nerd-festival/',
   },
   {
     quote: 'The Manifest conference has been a successful experiment: put enough introverts with common interests into a confined space and they\u2019ll spontaneously turn into extroverts.',
@@ -79,14 +79,30 @@ const FAQS = [
   { q: 'What is Manifest?', a: 'Manifest is a festival of forecasting and prediction markets, bringing together people who think deeply about the future and put their money where their mouth is.' },
   { q: 'Where is it located?', a: 'Lighthaven, 2740 Telegraph Avenue, Berkeley, CA 94705.' },
   // { q: 'What is the address?', a: '2740 Telegraph Avenue, Berkeley, CA 94705.' },
-  { q: 'Will accommodation be available for purchase?', a: 'Yes! Lighthaven has rooms available for ticketholders. Space is limited, so most attendees will need to find other accommodations nearby.' },
+  {
+    q: 'Will accommodation be available for purchase?',
+    a: (
+      <>
+        Yes! Lighthaven has a limited number of rooms available for ticketholders — book through{' '}
+        <a
+          href="https://www.havenbookings.space/events/festival-season-2026"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline decoration-m26-purple/40 underline-offset-2 hover:text-m26-purple-deep"
+        >
+          Lighthaven's website
+        </a>
+        . Space is limited, so most attendees will need to find other accommodations nearby.
+      </>
+    ),
+  },
   { q: 'What sorts of things will happen at Manifest?', a: 'Talks, panels, debates, workshops, games, prediction market tournaments, a night market, career fair, and much more. Much of the schedule comes from attendee-led sessions!' },
   { q: 'How many people will be at Manifest?', a: 'We expect around 500-700 attendees across the weekend.' },
   { q: 'What does my ticket include?', a: 'Access from Friday through Sunday, including breakfast, lunch, and dinner each day.' },
-  { q: 'Can I bring my kids?', a: "You're welcome to bring your kids, but there isn't kids-focused programming this year." },
+  { q: 'Can I bring my kids?', a: "Yes, we love kids! Kids 10 and under are free, though note that we're unlikely to offer dedicated childcare this year." },
   // { q: 'Can I come for just part of the event?', a: 'Sure! As much or as little as you want.' },
-  { q: 'How does volunteering work?', a: "We'll have volunteer opportunities closer to the event. Join our Discord to stay updated!" },
-  { q: 'What is your refund policy?', a: 'Full refunds are available up to 30 days before the event. After that, tickets are transferable but non-refundable.' },
+  { q: 'How does volunteering work?', a: "Volunteers get a discounted ticket in exchange for working shifts throughout the event; after the shifts are completed, volunteers are eligible for a full refund. More details coming soon!" },
+  { q: 'What is your refund policy?', a: 'Full refunds are available up to 7 days before the event -- contact team@manifest.is.' },
 ]
 
 const ORGANIZERS = [
@@ -150,7 +166,7 @@ function useCountdown(target: Date) {
 }
 
 // -- FAQ Item --
-function FAQRow({ q, a }: { q: string; a: string }) {
+function FAQRow({ q, a }: { q: string; a: React.ReactNode }) {
   const [open, setOpen] = useState(false)
   return (
     <div
@@ -468,7 +484,7 @@ export default function Manifest2026() {
             </p>
           </div>
           <div className="mt-10">
-            <BtnSolid href="mailto:team@manifest.is">Become a Sponsor</BtnSolid>
+            <BtnSolid href="mailto:team@manifest.is">Sponsorships available for 2026</BtnSolid>
           </div>
         </div>
       </section>
