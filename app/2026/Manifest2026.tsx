@@ -445,7 +445,7 @@ export default function Manifest2026() {
             <GalleryTile src="/images/gallery/2025-12.jpg" onClick={setLightboxSrc} className="aspect-square" sizes="25vw" />
             <GalleryTile src="/images/gallery/2025-6.jpg" onClick={setLightboxSrc} className="col-span-2 aspect-[2/1]" sizes="(min-width:640px) 50vw, 100vw" />
           </div>
-          <p className="mt-6 text-right font-cinzel text-xs tracking-wider text-m26-purple/70 uppercase">
+          <p className="mt-6 text-right font-cinzel text-sm tracking-wider text-m26-purple/80 uppercase">
             Photos courtesy of{' '}
             <a
               href="https://drethelin.com/"
