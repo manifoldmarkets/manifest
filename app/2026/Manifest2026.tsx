@@ -110,6 +110,7 @@ const ORGANIZERS = [
   { name: 'Winter', image: '/images/staff/winter.jpg', email: 'winter@manifest.is' },
   // { name: 'NJ', image: '/images/staff/nj.jpg', email: 'nj@manifest.is' },
   { name: 'Austin', image: '/images/staff/austin.jpg', email: 'austin@manifest.is' },
+  { name: 'Carolanne', image: '/images/staff/carolanne.jpg', email: 'carolanne@manifest.is' },
 ]
 
 // Asymmetric pill: top-left and bottom-right rounded
