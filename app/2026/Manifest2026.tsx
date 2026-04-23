@@ -103,6 +103,7 @@ const FAQS = [
   { q: 'Can I bring my kids?', a: "Yes, we love kids! Kids 10 and under are free, though note that we're unlikely to offer dedicated childcare this year." },
   // { q: 'Can I come for just part of the event?', a: 'Sure! As much or as little as you want.' },
   { q: 'How does volunteering work?', a: "Volunteers get a discounted ticket in exchange for working shifts throughout the event; after the shifts are completed, volunteers are eligible for a full refund. More details coming soon!" },
+  { q: 'What if I need financial assistance in order to attend?', a: (<>We don&apos;t want finances to prevent people from attending. We want everyone Manifest is meant for to feel welcome. If the volunteer shift requirement or deposit is too high, please fill out the <a href="https://airtable.com/appMZp1aBO5b7NTdM/pagTrQtYd1k1Oakhi/form" target="_blank" rel="noopener noreferrer" className="text-m26-purple underline hover:opacity-70">Low-Income Ticket Form</a> and optionally reach out to team@manifest.is if necessary.</>) },
   { q: 'What is your refund policy?', a: 'Full refunds are available up to 7 days before the event -- contact team@manifest.is.' },
 ]
 
