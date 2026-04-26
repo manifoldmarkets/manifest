@@ -98,6 +98,7 @@ const FAQS = [
     ),
   },
   { q: 'What sorts of things will happen at Manifest?', a: 'Talks, panels, debates, workshops, games, prediction market tournaments, a night market, career fair, and much more. Much of the schedule comes from attendee-led sessions!' },
+  { q: 'What specific time does Manifest start and end?', a: 'Exact schedule TBD, but in past years, the events have started Friday afternoon around 2pm, with an opening ceremony around 6pm. Closing ceremony is Sunday evening, but events continue and people hang around all through the night.' },
   { q: 'How many people will be at Manifest?', a: 'We expect around 500-700 attendees across the weekend.' },
   { q: 'What does my ticket include?', a: 'Access from Friday through Sunday, including breakfast, lunch, and dinner each day.' },
   { q: 'Can I bring my kids?', a: "Yes, we love kids! Kids 10 and under are free, though note that we're unlikely to offer dedicated childcare this year." },
