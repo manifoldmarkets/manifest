@@ -304,18 +304,29 @@ function BtnOutline({ href, children, className = '' }: { href: string; children
 export default function Manifest2026() {
   const { days, hours, minutes } = useCountdown(new Date('2026-06-12T09:00:00-07:00'))
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null)
+  const [pastHero, setPastHero] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setPastHero(window.scrollY > window.innerHeight - 80)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  const navTextColor = pastHero ? 'text-m26-purple' : 'text-white'
+  const navTextShadow = pastHero ? '' : 'drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]'
 
   return (
     <div className="bg-m26-parchment font-baskerville text-m26-purple-deep">
       <Lightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />
       {/* NAV */}
       <nav className="fixed top-0 flex w-full items-center justify-between bg-m26-parchment/30 px-6 py-3 backdrop-blur-sm z-50">
-        <span className="font-cinzel text-sm font-bold text-m26-purple uppercase">
+        <span className={`font-cinzel text-sm font-bold uppercase transition-colors duration-300 ${navTextColor} ${navTextShadow}`}>
           Manifest 2026
         </span>
         <div className="flex items-center gap-6">
-          <a href="#speakers" className="hidden font-cinzel text-sm font-bold text-m26-purple hover:opacity-70 sm:block">Home</a>
-          <a href="#speakers" className="hidden font-cinzel text-sm font-bold text-m26-purple hover:opacity-70 sm:block">Speakers</a>
+          <a href="#speakers" className={`hidden font-cinzel text-sm font-bold transition-colors duration-300 hover:opacity-70 sm:block ${navTextColor} ${navTextShadow}`}>Home</a>
+          <a href="#speakers" className={`hidden font-cinzel text-sm font-bold transition-colors duration-300 hover:opacity-70 sm:block ${navTextColor} ${navTextShadow}`}>Speakers</a>
           {/* <a href="#schedule" className="hidden font-cinzel text-sm font-bold text-m26-purple hover:opacity-70 sm:block">Schedule</a> */}
           <a href="#tickets" className={`${PILL} bg-m26-btn px-5 py-2 font-cinzel text-sm font-bold text-white transition-colors hover:bg-m26-btn-hover`}>
             Register
@@ -325,10 +336,9 @@ export default function Manifest2026() {
 
       {/* HERO — full viewport with image, then fades into parchment below */}
       <section className="relative">
-        {/* Image container: taller than viewport so it extends below the fold */}
-        <div className="relative h-[100vh]">
+        <div className="relative h-screen">
           <Image
-            src="/images/2026/midjourney-1.png"
+            src="/images/2026/campfire.jpg"
             alt="Manifest 2026"
             fill
             className="object-cover object-center"
@@ -340,12 +350,12 @@ export default function Manifest2026() {
           <div className="absolute inset-x-0 bottom-0 h-[10vh] bg-gradient-to-t from-m26-parchment to-transparent" />
         </div>
 
-        {/* Content pinned to center of first viewport */}
-        <div className="absolute inset-x-0 top-0 flex min-h-[90vh] flex-col items-center justify-center px-6 text-center">
-          <h1 className="animate-m26-fade-up font-cinzel-decorative text-3xl font-bold tracking-tighter sm:text-5xl lg:text-8xl lg:leading-none">
+        {/* Content pinned to center of hero image */}
+        <div className="absolute inset-x-0 top-0 flex h-screen flex-col items-center justify-center px-6 text-center">
+          <h1 className="animate-m26-fade-up font-cinzel-decorative text-3xl font-bold tracking-tighter text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)] sm:text-5xl lg:text-8xl lg:leading-none">
             Manifest 2026
           </h1>
-          <p className="animate-m26-fade-up-1 mt-4 font-cinzel text-sm font-bold text-m26-purple-deep sm:text-2xl">
+          <p className="animate-m26-fade-up-1 mt-4 font-cinzel text-sm font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] sm:text-2xl">
             A festival for predictions, <br />and markets thereof
           </p>
           <div className="animate-m26-fade-up-2 sm:mt-36 mt-12 relative">
@@ -392,6 +402,25 @@ export default function Manifest2026() {
           </div>
           <p className="mt-10 text-center font-cinzel text-md italic tracking-wide text-m26-purple/70">
             Stay tuned as we announce speakers &amp; guests for 2026
+          </p>
+        </div>
+      </section>
+
+      <Divider />
+
+      {/* WHAT IS MANIFEST */}
+      <section id="what-is-manifest" className="scroll-mt-16 py-16 sm:py-24">
+        <div className="mx-auto max-w-3xl px-6">
+          <h2 className="mb-10 text-center font-cinzel-decorative text-3xl font-normal tracking-wide sm:text-5xl">
+            What is Manifest?
+          </h2>
+          <p className="font-baskerville text-base leading-relaxed text-m26-purple-deep sm:text-lg sm:leading-8">
+            Manifest is a festival ostensibly about prediction markets, but
+            secretly about connecting with old friends and people you admire
+            from your favorite niche corners of the internet. It is a gathering
+            of nerds who want to find the thinkers and practitioners they
+            vehemently agree/disagree with, share a meal around a cozy
+            campfire, and come away with radically new ways of thinking.
           </p>
         </div>
       </section>
