@@ -44,9 +44,9 @@ export const metadata: Metadata = {
     description: 'A festival for prediction markets & the future. June 12-14, 2026 · Berkeley, CA.',
     images: [
       {
-        url: '/images/2026/manifest-2026-og.png',
-        width: 1200,
-        height: 630,
+        url: '/images/2026/rainbow-orb-preview.png',
+        width: 1600,
+        height: 900,
         alt: 'Manifest 2026 - A festival for prediction markets & the future',
       },
     ],
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Manifest 2026',
     description: 'A festival for prediction markets & the future. June 12-14, 2026 · Berkeley, CA.',
-    images: ['/images/2026/manifest-2026-og.png'],
+    images: ['/images/2026/rainbow-orb-preview.png'],
   },
 }
 
