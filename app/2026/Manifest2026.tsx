@@ -352,10 +352,10 @@ export default function Manifest2026() {
 
         {/* Content pinned to center of hero image */}
         <div className="absolute inset-x-0 top-0 flex h-screen flex-col items-center justify-center px-6 text-center">
-          <h1 className="animate-m26-fade-up font-cinzel-decorative text-3xl font-bold tracking-tighter text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)] sm:text-5xl lg:text-8xl lg:leading-none">
+          <h1 className="animate-m26-fade-up font-cinzel-decorative text-3xl font-bold tracking-tighter text-white [text-shadow:_0_2px_4px_rgba(46,31,77,0.95),_0_4px_20px_rgba(46,31,77,0.85),_0_8px_40px_rgba(46,31,77,0.7)] sm:text-5xl lg:text-8xl lg:leading-none">
             Manifest 2026
           </h1>
-          <p className="animate-m26-fade-up-1 mt-4 font-cinzel text-sm font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] sm:text-2xl">
+          <p className="animate-m26-fade-up-1 mt-4 font-cinzel text-sm font-bold text-white [text-shadow:_0_2px_3px_rgba(46,31,77,0.95),_0_3px_14px_rgba(46,31,77,0.85),_0_6px_28px_rgba(46,31,77,0.7)] sm:text-2xl">
             A festival for predictions, <br />and markets thereof
           </p>
           <div className="animate-m26-fade-up-2 sm:mt-36 mt-12 relative">
