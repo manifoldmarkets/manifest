@@ -10,10 +10,11 @@ const SPEAKERS = [
   { name: 'Scott Alexander', bio: 'Astral Codex Ten', image: '/images/speakers/scott.jpg' },
   { name: 'Chris Best', bio: 'Substack', image: '/images/speakers/chris.jpg' },
   { name: 'Luana Lopes Lara', bio: 'Kalshi', image: '/images/speakers/luana.jpg' },
+  { name: 'Shayne Coplan', bio: 'Polymarket', image: '/images/speakers/shayne.jpg' },
   // { name: 'Allison Duettmann', bio: 'Foresight', image: '/images/speakers/allison.jpg' },
   { name: 'Emmett Shear', bio: 'Softmax', image: '/images/speakers/emmett.jpg' },
   { name: 'Joe Carlsmith', bio: 'Anthropic', image: '/images/speakers/joe.jpg' },
-  { name: 'David Shor', bio: 'Blue Rose Research', image: '/images/speakers/davidshor.jpg' },
+  // { name: 'David Shor', bio: 'Blue Rose Research', image: '/images/speakers/davidshor.jpg' },
   { name: 'Laura Deming', bio: 'Cradle', image: '/images/speakers/laura.jpg' },
   { name: 'Patrick McKenzie', bio: 'Writer', image: '/images/speakers/patrick.jpg' },
   { name: 'Robin Hanson', bio: 'Economist', image: '/images/speakers/robin.jpg' },
@@ -30,7 +31,7 @@ const SPECIAL_GUESTS = [
   'Samo Burja', 'Samuel Hammond', 'Scott Sumner', 'Sholto Douglas',
   'Steve Hsu', 'Tracing Woodgrains', 'Roon', 'Paul Gu', 'Dwarkesh Patel',
   'Ajeya Cotra', 'Noah Smith', 'Aella', 'Stephen Grugett',
-  'Eliezer Yudkowsky', 'Katja Grace', 'Tarek Mansour', 'Shayne Coplan', 'Allison Duettmann', 'Zvi Mowshowitz',
+  'Eliezer Yudkowsky', 'Katja Grace', 'Tarek Mansour', 'David Shor', 'Allison Duettmann', 'Zvi Mowshowitz',
   'Agnes Callard', 'Arnold Brooks',
 ]
 
